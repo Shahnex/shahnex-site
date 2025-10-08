@@ -1,0 +1,144 @@
+
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>شحنكس | شحن ذكي بأسعار تنافسية</title>
+  <meta name="description" content="شحن ذكي بأسعار تنافسية. تسعير فوري، تنفيذ سريع، تتبع حي، ودفع مؤمّن." />
+  <link rel="canonical" href="https://www.shahnex.com/" />
+  <link rel="icon" href="/assets/logo-icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json" />
+  <meta property="og:title" content="شحنكس | شحن ذكي بأسعار تنافسية" />
+  <meta property="og:description" content="تسعير فوري وتنفيذ سريع على المسارات الرئيسية في السعودية." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.shahnex.com/" />
+  <meta property="og:image" content="https://www.shahnex.com/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="container header">
+    <a class="logo" href="/">
+      <img src="/assets/logo-icon.svg" alt="Shahnex logo" width="40" height="40" />
+      <span>شحنكس</span>
+    </a>
+    <nav class="nav">
+      <a href="/en/">English</a>
+      <a target="_blank" rel="noopener" id="wa-btn" href="https://wa.me/9665XXXXXXXX">واتساب</a>
+    </nav>
+  </header>
+
+  <main class="container hero">
+    <h1>شحن ذكي بأسعار تنافسية</h1>
+    <p>تسعير فوري، تنفيذ سريع، تتبع حي، ودفع مؤمّن (Escrow).</p>
+    <div class="cards">
+      <section class="card">
+        <h2>طلب شحنة (للعملاء)</h2>
+        <form action="https://formspree.io/f/clientXYZ" method="POST">
+          <div class="grid">
+            <label>الاسم الكامل
+              <input name="client_name" required />
+            </label>
+            <label>الجوال
+              <input name="phone" required />
+            </label>
+            <label>البريد الإلكتروني
+              <input type="email" name="email" />
+            </label>
+            <label>مدينة التحميل
+              <input name="from_city" required />
+            </label>
+            <label>مدينة التسليم
+              <input name="to_city" required />
+            </label>
+            <label>عنوان التحميل (اختياري)
+              <input name="from_address" />
+            </label>
+            <label>عنوان التسليم (اختياري)
+              <input name="to_address" />
+            </label>
+            <label>نوع المركبة
+              <select name="vehicle_type" required>
+                <option value="">اختر</option>
+                <option>Pickup</option>
+                <option>3t</option>
+                <option>7t</option>
+                <option>Trailer</option>
+              </select>
+            </label>
+            <label>الوزن التقريبي (كجم)
+              <input type="number" name="weight_kg" min="0" />
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="refrigerated" value="true" />
+              شحنة مبردة
+            </label>
+            <label>ملاحظات (اختياري)
+              <textarea name="notes" rows="3" placeholder="أي تفاصيل إضافية"></textarea>
+            </label>
+            <input type="hidden" name="source" value="website-ar" />
+            <input type="hidden" name="_subject" value="طلب عرض سعر - شحنكس" />
+            <input type="hidden" name="_redirect" value="/thanks.html" />
+          </div>
+          <button class="btn primary" type="submit">أرسل الطلب</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>انضم كمورّد (شركة/سائق)</h2>
+        <form action="https://formspree.io/f/supplierABC" method="POST">
+          <div class="grid">
+            <label>الاسم التجاري/الشخصي
+              <input name="supplier_name" required />
+            </label>
+            <label>نوع الحساب
+              <select name="supplier_type" required>
+                <option value="">اختر</option>
+                <option>شركة نقل</option>
+                <option>سائق مستقل</option>
+              </select>
+            </label>
+            <label>الجوال
+              <input name="phone" required />
+            </label>
+            <label>البريد الإلكتروني
+              <input type="email" name="email" />
+            </label>
+            <label>المدن/المسارات المفضلة
+              <input name="lanes" />
+            </label>
+            <label>أنواع المركبات
+              <input name="vehicles" placeholder="Pickup, 3t, 7t, Trailer" />
+            </label>
+            <label>ملاحظات (اختياري)
+              <textarea name="notes" rows="3" placeholder="تفاصيل إضافية"></textarea>
+            </label>
+            <input type="hidden" name="source" value="website-ar" />
+            <input type="hidden" name="_subject" value="انضمام مورد - شحنكس" />
+            <input type="hidden" name="_redirect" value="/thanks.html" />
+          </div>
+          <button class="btn secondary" type="submit">أرسل البيانات</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- المسارات المبدئية -->
+  <section class="container card" id="lanes">
+    <h2>المسارات المبدئية (ذهاب وعودة)</h2>
+    <ul class="lanes">
+      <li>الرياض ↔ جدة</li>
+      <li>الرياض ↔ الدمام</li>
+      <li>الرياض ↔ خميس مشيط</li>
+      <li>الرياض ↔ القصيم</li>
+    </ul>
+    <p class="note">التسعير التفصيلي يُقدّم عند الطلب، مع خيارات شحن مبرد ورسوم انتظار عند الحاجة.</p>
+  </section>
+
+  <footer class="container footer">
+    <p>© Shahnex. جميع الحقوق محفوظة.</p>
+    <p><a href="/en/">English</a> • <a href="mailto:user@shahnex.com">user@shahnex.com</a></p>
+  </footer>
+</body>
+</html>

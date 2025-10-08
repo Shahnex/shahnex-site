@@ -1,0 +1,11 @@
+
+  "name": "Shahnex",
+  "short_name": "Shahnex",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#F5F7FA",
+  "theme_color": "#00A76F",
+  "icons": [
+    { "src": "/assets/logo-icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

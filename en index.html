@@ -1,0 +1,144 @@
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shahnex | Smart shipping. Better rates.</title>
+  <meta name="description" content="Instant quotes, fast execution, live tracking, and escrowed payments." />
+  <link rel="canonical" href="https://www.shahnex.com/en/" />
+  <link rel="icon" href="/assets/logo-icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json" />
+  <meta property="og:title" content="Shahnex | Smart shipping. Better rates." />
+  <meta property="og:description" content="Instant quotes and fast execution across key lanes in KSA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.shahnex.com/en/" />
+  <meta property="og:image" content="https://www.shahnex.com/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="container header">
+    <a class="logo" href="/en/">
+      <img src="/assets/logo-icon.svg" alt="Shahnex logo" width="40" height="40" />
+      <span>Shahnex</span>
+    </a>
+    <nav class="nav">
+      <a href="/">العربية</a>
+      <a target="_blank" rel="noopener" id="wa-btn" href="https://wa.me/9665XXXXXXXX">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main class="container hero">
+    <h1>Smart shipping. Better rates.</h1>
+    <p>Instant quotes, fast execution, live tracking, and secured escrow payments.</p>
+
+    <div class="cards">
+      <section class="card">
+        <h2>Request a shipment (Customers)</h2>
+        <form action="https://formspree.io/f/clientXYZ" method="POST">
+          <div class="grid">
+            <label>Full name
+              <input name="client_name" required />
+            </label>
+            <label>Phone
+              <input name="phone" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" />
+            </label>
+            <label>Pickup city
+              <input name="from_city" required />
+            </label>
+            <label>Drop-off city
+              <input name="to_city" required />
+            </label>
+            <label>Pickup address (optional)
+              <input name="from_address" />
+            </label>
+            <label>Drop-off address (optional)
+              <input name="to_address" />
+            </label>
+            <label>Vehicle type
+              <select name="vehicle_type" required>
+                <option value="">Select</option>
+                <option>Pickup</option>
+                <option>3t</option>
+                <option>7t</option>
+                <option>Trailer</option>
+              </select>
+            </label>
+            <label>Weight (kg)
+              <input type="number" name="weight_kg" min="0" />
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="refrigerated" value="true" />
+              Refrigerated
+            </label>
+            <label>Notes (optional)
+              <textarea name="notes" rows="3" placeholder="Any extra details"></textarea>
+            </label>
+            <input type="hidden" name="source" value="website-en" />
+            <input type="hidden" name="_subject" value="Quote request - Shahnex" />
+            <input type="hidden" name="_redirect" value="/thanks.html" />
+          </div>
+          <button class="btn primary" type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Join as Supplier (Carrier/Driver)</h2>
+        <form action="https://formspree.io/f/supplierABC" method="POST">
+          <div class="grid">
+            <label>Business/Personal name
+              <input name="supplier_name" required />
+            </label>
+            <label>Account type
+              <select name="supplier_type" required>
+                <option value="">Select</option>
+                <option>Carrier</option>
+                <option>Independent driver</option>
+              </select>
+            </label>
+            <label>Phone
+              <input name="phone" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" />
+            </label>
+            <label>Preferred lanes
+              <input name="lanes" />
+            </label>
+            <label>Vehicle types
+              <input name="vehicles" placeholder="Pickup, 3t, 7t, Trailer" />
+            </label>
+            <label>Notes (optional)
+              <textarea name="notes" rows="3" placeholder="Extra details"></textarea>
+            </label>
+            <input type="hidden" name="source" value="website-en" />
+            <input type="hidden" name="_subject" value="Supplier signup - Shahnex" />
+            <input type="hidden" name="_redirect" value="/thanks.html" />
+          </div>
+          <button class="btn secondary" type="submit">Send</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <section class="container card" id="lanes">
+    <h2>Key lanes (round-trip)</h2>
+    <ul class="lanes">
+      <li>Riyadh ↔ Jeddah</li>
+      <li>Riyadh ↔ Dammam</li>
+      <li>Riyadh ↔ Khamis Mushait</li>
+      <li>Riyadh ↔ Al-Qassim</li>
+    </ul>
+    <p class="note">Detailed pricing provided on request. Refrigerated and waiting options available.</p>
+  </section>
+
+  <footer class="container footer">
+    <p>© Shahnex. All rights reserved.</p>
+    <p><a href="/">العربية</a> • <a href="mailto:user@shahnex.com">user@shahnex.com</a></p>
+  </footer>
+</body>
+</html>
+

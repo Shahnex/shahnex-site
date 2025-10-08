@@ -1,0 +1,31 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Cairo','IBM Plex Sans Arabic','Inter',system-ui,-apple-system,Segoe UI,Roboto;
+  background:var(--cloud); color:#111;
+}
+.container{max-width:1040px;margin:0 auto;padding:16px}
+.header{display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;gap:10px;align-items:center;text-decoration:none;color:#111;font-weight:800;font-size:20px}
+.nav a{margin-inline-start:16px;text-decoration:none;color:#155EFB;font-weight:600}
+.hero{padding-block:24px}
+.cards{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border:1px solid #eaeaea;border-radius:12px;padding:16px}
+h1{font-size:28px;margin:8px 0}
+h2{font-size:20px;margin:8px 0}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:680px){.grid{grid-template-columns:1fr 1fr}}
+label{display:flex;flex-direction:column;font-size:14px;gap:6px}
+input,select,textarea{padding:10px 12px;border:1px solid #dcdcdc;border-radius:10px;font-size:14px}
+textarea{resize:vertical}
+.checkbox{flex-direction:row;align-items:center;gap:10px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;font-weight:700}
+.primary{background:var(--green);color:white}
+.secondary{background:var(--blue);color:white}
+.footer{padding:24px 16px;color:#555}
+.center{display:grid;place-items:center;min-height:100vh}
+.thankyou{text-align:center;background:#fff;border:1px solid #eee;border-radius:16px;padding:24px}
+.table-scroll{overflow:auto}
+.lanes{display:grid;grid-template-columns:1fr;gap:8px;margin:8px 0 0 0;padding:0;list-style:inside}
+.note{color:#444;margin-top:8px}
