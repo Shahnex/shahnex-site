@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="شحن إكس">
+  <defs>
+    <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00A76F"/>
+      <stop offset="1" stop-color="#155EFB"/>
+    </linearGradient>
+  </defs>
+  <!-- حاوية بإطار ناعم -->
+  <rect x="16" y="16" width="96" height="96" rx="20" fill="url(#gA)"/>
+  <!-- صندوق بسيط -->
+  <g transform="translate(32,36)" fill="none" stroke="#F5F7FA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6" y="14" width="52" height="34" rx="8"/>
+    <path d="M20 14l12 10 12-10"/>
+    <!-- سهم توصيل يتحرك للأمام -->
+    <path d="M64 30h14M78 30l-6-6M78 30l-6 6"/>
+  </g>
+</svg>
