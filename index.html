@@ -1,145 +1,109 @@
 
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>شحن إكس | شحن ذكي بأسعار تنافسية</title>
-  <meta name="description" content="شحن ذكي بأسعار تنافسية. تسعير فوري، تنفيذ سريع، تتبع حي، ودفع مؤمّن." />
-  <link rel="canonical" href="https://www.shahnex.com/" />
-  <link rel="icon" href="/assets/logo-icon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.json" />
-  <meta property="og:title" content="شحن إكس | شحن ذكي بأسعار تنافسية" />
-  <meta property="og:description" content="تسعير فوري وتنفيذ سريع على المسارات الرئيسية في السعودية." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.shahnex.com/" />
-  <meta property="og:image" content="https://www.shahnex.com/assets/og-image.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>شحن إكس — شحن ذكي بأسعار تنافسية</title>
+  <meta name="description" content="شحن إكس — شحن ذكي بأسعار تنافسية. طلبات شحن بين المدن ومسارات رئيسية: الرياض، جدة، الدمام، خميس مشيط، القصيم.">
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="شحن إكس — شحن ذكي بأسعار تنافسية">
+  <meta property="og:site_name" content="شحن إكس">
+  <meta property="og:description" content="شحن ذكي بأسعار تنافسية. اطلب عرض سعر الآن.">
+  <meta property="og:url" content="https://www.shahnex.com/">
+  <meta property="og:image" content="https://www.shahnex.com/assets/logo-icon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    body { font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, "IBM Plex Sans Arabic", Tahoma, Arial; background:#F5F7FA; color:#1E1E24; }
+    header, footer { padding: 16px 0; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img { width:40px; height:40px; }
+    .hero { padding: 32px 0; }
+    .cards { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 24px 0; }
+    .card { background:#fff; border-radius:12px; padding:16px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+    form input, form textarea, form button { width:100%; padding:12px; margin:8px 0; border-radius:10px; border:1px solid #e5e7eb; font-size:16px; }
+    form button { background:#00A76F; color:#fff; border:none; cursor:pointer; }
+    form button:hover { background:#0d8b5d; }
+    .whatsapp { display:inline-block; margin-top:8px; background:#25D366; color:#fff; padding:10px 14px; border-radius:10px; text-decoration:none; }
+    .routes ul { display:grid; gap:6px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); padding:0; list-style:none; }
+    a { color:#155EFB; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+  </style>
 </head>
 <body>
-  <header class="container header">
-    <a class="logo" href="/">
-      <img src="/assets/logo-icon.svg" alt="Shahnex logo" width="40" height="40" />
-      <span>شحن إكس</span>
-    </a>
-    <nav class="nav">
-      <a href="/en/">English</a>
-      <a target="_blank" rel="noopener" id="wa-btn" href="https://wa.me/9665XXXXXXXX">واتساب</a>
-    </nav>
+  <header>
+    <div class="container brand">
+      <img src="assets/logo-icon.svg" alt="شحن إكس">
+      <div>
+        <strong>شحن إكس</strong>
+        <div>شحن ذكي بأسعار تنافسية</div>
+      </div>
+    </div>
   </header>
 
-  <main class="container hero">
-    <h1>شحن ذكي بأسعار تنافسية</h1>
-    <p>تسعير فوري، تنفيذ سريع، تتبع حي، ودفع مؤمّن (Escrow).</p>
-    <div class="cards">
-      <section class="card">
-        <h2>طلب شحنة (للعملاء)</h2>
-        <form action="https://formspree.io/f/clientXYZ" method="POST">
-          <div class="grid">
-            <label>الاسم الكامل
-              <input name="client_name" required />
-            </label>
-            <label>الجوال
-              <input name="phone" required />
-            </label>
-            <label>البريد الإلكتروني
-              <input type="email" name="email" />
-            </label>
-            <label>مدينة التحميل
-              <input name="from_city" required />
-            </label>
-            <label>مدينة التسليم
-              <input name="to_city" required />
-            </label>
-            <label>عنوان التحميل (اختياري)
-              <input name="from_address" />
-            </label>
-            <label>عنوان التسليم (اختياري)
-              <input name="to_address" />
-            </label>
-            <label>نوع المركبة
-              <select name="vehicle_type" required>
-                <option value="">اختر</option>
-                <option>Pickup</option>
-                <option>3t</option>
-                <option>7t</option>
-                <option>Trailer</option>
-              </select>
-            </label>
-            <label>الوزن التقريبي (كجم)
-              <input type="number" name="weight_kg" min="0" />
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" name="refrigerated" value="true" />
-              شحنة مبردة
-            </label>
-            <label>ملاحظات (اختياري)
-              <textarea name="notes" rows="3" placeholder="أي تفاصيل إضافية"></textarea>
-            </label>
-            <input type="hidden" name="source" value="website-ar" />
-            <input type="hidden" name="_subject" value="طلب عرض سعر - شحن إكس" />
-            <input type="hidden" name="_redirect" value="/thanks.html" />
-          </div>
-          <button class="btn primary" type="submit">أرسل الطلب</button>
-        </form>
-      </section>
+  <main class="container">
+    <section class="hero">
+      <h1>اطلب عرض سعر لشحنتك</h1>
+      <p>نخدم المسارات الرئيسية: الرياض، جدة، الدمام، خميس مشيط، القصيم — ذهاب وعودة.</p>
+      <a class="whatsapp" href="https://wa.me/966590000819" target="_blank" rel="noopener">تواصل واتساب</a>
+    </section>
 
-      <section class="card">
-        <h2>انضم كمورّد (شركة/سائق)</h2>
-        <form action="https://formspree.io/f/supplierABC" method="POST">
-          <div class="grid">
-            <label>الاسم التجاري/الشخصي
-              <input name="supplier_name" required />
-            </label>
-            <label>نوع الحساب
-              <select name="supplier_type" required>
-                <option value="">اختر</option>
-                <option>شركة نقل</option>
-                <option>سائق مستقل</option>
-              </select>
-            </label>
-            <label>الجوال
-              <input name="phone" required />
-            </label>
-            <label>البريد الإلكتروني
-              <input type="email" name="email" />
-            </label>
-            <label>المدن/المسارات المفضلة
-              <input name="lanes" />
-            </label>
-            <label>أنواع المركبات
-              <input name="vehicles" placeholder="Pickup, 3t, 7t, Trailer" />
-            </label>
-            <label>ملاحظات (اختياري)
-              <textarea name="notes" rows="3" placeholder="تفاصيل إضافية"></textarea>
-            </label>
-            <input type="hidden" name="source" value="website-ar" />
-            <input type="hidden" name="_subject" value="انضمام مورد - شحن إكس" />
-            <input type="hidden" name="_redirect" value="/thanks.html" />
-          </div>
-          <button class="btn secondary" type="submit">أرسل البيانات</button>
+    <section class="cards">
+      <div class="card">
+        <h2>طلب عرض سعر (عملاء)</h2>
+        <form action="https://formspree.io/f/mjkaaazd" method="POST">
+          <input type="text" name="full_name" required placeholder="الاسم الكامل">
+          <input type="email" name="email" required placeholder="البريد الإلكتروني">
+          <input type="tel" name="phone" required placeholder="رقم الجوال">
+          <textarea name="details" required placeholder="تفاصيل الشحنة (المصدر، الوجهة، النوع، الوزن/الأبعاد، الوقت)"></textarea>
+
+          <input type="hidden" name="_subject" value="New Quote Request (AR) — Shahnex / شحن إكس">
+          <input type="hidden" name="_redirect" value="https://www.shahnex.com/thanks.html">
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit">إرسال الطلب</button>
         </form>
-      </section>
-    </div>
+      </div>
+
+      <div class="card">
+        <h2>انضم كمورّد/سائق</h2>
+        <form action="https://formspree.io/f/mzzjjjqd" method="POST">
+          <input type="text" name="name" required placeholder="الاسم">
+          <input type="tel" name="phone" required placeholder="رقم الجوال">
+          <input type="text" name="vehicle" required placeholder="نوع المركبة (بيك آب، دينّا، تريلا...)">
+          <textarea name="coverage" placeholder="نطاق التغطية (مدن/مسارات)"></textarea>
+
+          <input type="hidden" name="_subject" value="New Carrier Application (AR) — Shahnex / شحن إكس">
+          <input type="hidden" name="_redirect" value="https://www.shahnex.com/thanks.html">
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit">تسجيل</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="card routes">
+      <h2>المسارات المتاحة</h2>
+      <ul>
+        <li>الرياض ↔ جدة</li>
+        <li>الرياض ↔ الدمام</li>
+        <li>الرياض ↔ خميس مشيط</li>
+        <li>الرياض ↔ القصيم</li>
+      </ul>
+      <p>لقسم الإنجليزية، زر <a href="/en/">النسخة الإنجليزية</a>.</p>
+    </section>
   </main>
 
-  <!-- المسارات المبدئية -->
-  <section class="container card" id="lanes">
-    <h2>المسارات المبدئية (ذهاب وعودة)</h2>
-    <ul class="lanes">
-      <li>الرياض ↔ جدة</li>
-      <li>الرياض ↔ الدمام</li>
-      <li>الرياض ↔ خميس مشيط</li>
-      <li>الرياض ↔ القصيم</li>
-    </ul>
-    <p class="note">التسعير التفصيلي يُقدّم عند الطلب، مع خيارات شحن مبرد ورسوم انتظار عند الحاجة.</p>
-  </section>
-
-  <footer class="container footer">
-    <p>© Shahnex. جميع الحقوق محفوظة.</p>
-    <p><a href="/en/">English</a> • <a href="mailto:user@shahnex.com">user@shahnex.com</a></p>
+  <footer>
+    <div class="container">
+      <p>© 2025 شحن إكس — Shahnex. جميع الحقوق محفوظة.</p>
+    </div>
   </footer>
 </body>
-
 </html>
