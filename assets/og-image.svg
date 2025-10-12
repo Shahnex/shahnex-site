@@ -1,23 +1,21 @@
-:root{
-  --green:#00A76F;
-  --blue:#155EFB;
-  --ink:#1E1E24;
-  --bg:#F5F7FA;
-}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, "IBM Plex Sans Arabic", Tahoma, Arial}
-.container{max-width:1080px;margin:0 auto;padding:0 16px}
-header,footer{padding:16px 0}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img,.brand svg{width:40px;height:40px;flex:0 0 40px}
-.hero{padding:32px 0}
-.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:24px 0}
-.card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-form input,form textarea,form button{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #e5e7eb;font-size:16px}
-form textarea{min-height:120px;resize:vertical}
-form button{background:var(--green);color:#fff;border:none;cursor:pointer}
-form button:hover{background:#0d8b5d}
-a{color:var(--blue);text-decoration:none}
-a:hover{text-decoration:underline}
-.whatsapp{display:inline-block;margin-top:8px;background:#25D366;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none}
-.routes ul{display:grid;gap:6px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding:0;list-style:none}
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00A76F"/>
+      <stop offset="1" stop-color="#155EFB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#F5F7FA"/>
+  <circle cx="180" cy="315" r="120" fill="url(#g)"/>
+  <g transform="translate(136,287)" fill="none" stroke="#F5F7FA" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-10" y="-10" width="110" height="60" rx="10"/>
+    <path d="M100 -2h40l20 24v14h-60z"/>
+    <circle cx="12" cy="56" r="14" fill="#F5F7FA" stroke="none"/>
+    <circle cx="108" cy="56" r="14" fill="#F5F7FA" stroke="none"/>
+  </g>
+  <path d="M120 255 L240 375 M240 255 L120 375" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round" opacity="0.9"/>
+  <text x="360" y="280" font-family="Cairo, Arial, sans-serif" font-size="60" fill="#1E1E24" direction="rtl">شحن إكس</text>
+  <text x="360" y="340" font-family="Inter, Arial, sans-serif" font-size="36" fill="#155EFB">Shahnex</text>
+  <text x="360" y="400" font-family="Cairo, Arial, sans-serif" font-size="32" fill="#1E1E24">شحن ذكي بأسعار تنافسية</text>
+  <text x="360" y="470" font-family="Inter, Arial, sans-serif" font-size="24" fill="#4B5563">www.shahnex.com</text>
+</svg>
