@@ -1,144 +1,108 @@
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Shahnex | Smart shipping. Better rates.</title>
-  <meta name="description" content="Instant quotes, fast execution, live tracking, and escrowed payments." />
-  <link rel="canonical" href="https://www.shahnex.com/en/" />
-  <link rel="icon" href="/assets/logo-icon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.json" />
-  <meta property="og:title" content="Shahnex | Smart shipping. Better rates." />
-  <meta property="og:description" content="Instant quotes and fast execution across key lanes in KSA." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.shahnex.com/en/" />
-  <meta property="og:image" content="https://www.shahnex.com/assets/og-image.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shahnex — Smart shipping. Better rates.</title>
+  <meta name="description" content="Shahnex — Smart shipping. Better rates. Intercity shipping across Riyadh, Jeddah, Dammam, Khamis Mushait, and Qassim.">
+  <link rel="icon" href="../assets/logo-icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shahnex — Smart shipping. Better rates.">
+  <meta property="og:site_name" content="Shahnex">
+  <meta property="og:description" content="Request a quote now.">
+  <meta property="og:url" content="https://www.shahnex.com/en/">
+  <meta property="og:image" content="https://www.shahnex.com/assets/logo-icon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "IBM Plex Sans Arabic", Tahoma, Arial; background:#F5F7FA; color:#1E1E24; }
+    header, footer { padding: 16px 0; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img { width:40px; height:40px; }
+    .hero { padding: 32px 0; }
+    .cards { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 24px 0; }
+    .card { background:#fff; border-radius:12px; padding:16px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+    form input, form textarea, form button { width:100%; padding:12px; margin:8px 0; border-radius:10px; border:1px solid #e5e7eb; font-size:16px; }
+    form button { background:#155EFB; color:#fff; border:none; cursor:pointer; }
+    form button:hover { background:#0f48d2; }
+    .whatsapp { display:inline-block; margin-top:8px; background:#25D366; color:#fff; padding:10px 14px; border-radius:10px; text-decoration:none; }
+    .routes ul { display:grid; gap:6px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); padding:0; list-style:none; }
+    a { color:#155EFB; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+  </style>
 </head>
 <body>
-  <header class="container header">
-    <a class="logo" href="/en/">
-      <img src="/assets/logo-icon.svg" alt="Shahnex logo" width="40" height="40" />
-      <span>Shahnex</span>
-    </a>
-    <nav class="nav">
-      <a href="/">العربية</a>
-      <a target="_blank" rel="noopener" id="wa-btn" href="https://wa.me/9665XXXXXXXX">WhatsApp</a>
-    </nav>
+  <header>
+    <div class="container brand">
+      <img src="../assets/logo-icon.svg" alt="Shahnex">
+      <div>
+        <strong>Shahnex</strong>
+        <div>Smart shipping. Better rates.</div>
+      </div>
+    </div>
   </header>
 
-  <main class="container hero">
-    <h1>Smart shipping. Better rates.</h1>
-    <p>Instant quotes, fast execution, live tracking, and secured escrow payments.</p>
+  <main class="container">
+    <section class="hero">
+      <h1>Request your shipping quote</h1>
+      <p>Main routes: Riyadh, Jeddah, Dammam, Khamis Mushait, and Qassim — round trips available.</p>
+      <a class="whatsapp" href="https://wa.me/966590000819" target="_blank" rel="noopener">WhatsApp</a>
+    </section>
 
-    <div class="cards">
-      <section class="card">
-        <h2>Request a shipment (Customers)</h2>
-        <form action="https://formspree.io/f/clientXYZ" method="POST">
-          <div class="grid">
-            <label>Full name
-              <input name="client_name" required />
-            </label>
-            <label>Phone
-              <input name="phone" required />
-            </label>
-            <label>Email
-              <input type="email" name="email" />
-            </label>
-            <label>Pickup city
-              <input name="from_city" required />
-            </label>
-            <label>Drop-off city
-              <input name="to_city" required />
-            </label>
-            <label>Pickup address (optional)
-              <input name="from_address" />
-            </label>
-            <label>Drop-off address (optional)
-              <input name="to_address" />
-            </label>
-            <label>Vehicle type
-              <select name="vehicle_type" required>
-                <option value="">Select</option>
-                <option>Pickup</option>
-                <option>3t</option>
-                <option>7t</option>
-                <option>Trailer</option>
-              </select>
-            </label>
-            <label>Weight (kg)
-              <input type="number" name="weight_kg" min="0" />
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" name="refrigerated" value="true" />
-              Refrigerated
-            </label>
-            <label>Notes (optional)
-              <textarea name="notes" rows="3" placeholder="Any extra details"></textarea>
-            </label>
-            <input type="hidden" name="source" value="website-en" />
-            <input type="hidden" name="_subject" value="Quote request - Shahnex" />
-            <input type="hidden" name="_redirect" value="/thanks.html" />
-          </div>
-          <button class="btn primary" type="submit">Submit</button>
-        </form>
-      </section>
+    <section class="cards">
+      <div class="card">
+        <h2>Clients — Quote request</h2>
+        <form action="https://formspree.io/f/mjkaaazd" method="POST">
+          <input type="text" name="full_name" required placeholder="Full name">
+          <input type="email" name="email" required placeholder="Email">
+          <input type="tel" name="phone" required placeholder="Phone">
+          <textarea name="details" required placeholder="Shipment details (from, to, type, weight/dims, time)"></textarea>
 
-      <section class="card">
-        <h2>Join as Supplier (Carrier/Driver)</h2>
-        <form action="https://formspree.io/f/supplierABC" method="POST">
-          <div class="grid">
-            <label>Business/Personal name
-              <input name="supplier_name" required />
-            </label>
-            <label>Account type
-              <select name="supplier_type" required>
-                <option value="">Select</option>
-                <option>Carrier</option>
-                <option>Independent driver</option>
-              </select>
-            </label>
-            <label>Phone
-              <input name="phone" required />
-            </label>
-            <label>Email
-              <input type="email" name="email" />
-            </label>
-            <label>Preferred lanes
-              <input name="lanes" />
-            </label>
-            <label>Vehicle types
-              <input name="vehicles" placeholder="Pickup, 3t, 7t, Trailer" />
-            </label>
-            <label>Notes (optional)
-              <textarea name="notes" rows="3" placeholder="Extra details"></textarea>
-            </label>
-            <input type="hidden" name="source" value="website-en" />
-            <input type="hidden" name="_subject" value="Supplier signup - Shahnex" />
-            <input type="hidden" name="_redirect" value="/thanks.html" />
-          </div>
-          <button class="btn secondary" type="submit">Send</button>
+          <input type="hidden" name="_subject" value="New Quote Request (EN) — Shahnex">
+          <input type="hidden" name="_redirect" value="https://www.shahnex.com/thanks.html">
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit">Send</button>
         </form>
-      </section>
-    </div>
+      </div>
+
+      <div class="card">
+        <h2>Carriers/Drivers — Apply</h2>
+        <form action="https://formspree.io/f/mzzjjjqd" method="POST">
+          <input type="text" name="name" required placeholder="Name">
+          <input type="tel" name="phone" required placeholder="Phone">
+          <input type="text" name="vehicle" required placeholder="Vehicle type">
+          <textarea name="coverage" placeholder="Coverage area"></textarea>
+
+          <input type="hidden" name="_subject" value="New Carrier Application (EN) — Shahnex">
+          <input type="hidden" name="_redirect" value="https://www.shahnex.com/thanks.html">
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit">Apply</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="card routes">
+      <h2>Available routes</h2>
+      <ul>
+        <li>Riyadh ↔ Jeddah</li>
+        <li>Riyadh ↔ Dammam</li>
+        <li>Riyadh ↔ Khamis Mushait</li>
+        <li>Riyadh ↔ Qassim</li>
+      </ul>
+      <p>Back to Arabic: <a href="/">النسخة العربية</a>.</p>
+    </section>
   </main>
 
-  <section class="container card" id="lanes">
-    <h2>Key lanes (round-trip)</h2>
-    <ul class="lanes">
-      <li>Riyadh ↔ Jeddah</li>
-      <li>Riyadh ↔ Dammam</li>
-      <li>Riyadh ↔ Khamis Mushait</li>
-      <li>Riyadh ↔ Al-Qassim</li>
-    </ul>
-    <p class="note">Detailed pricing provided on request. Refrigerated and waiting options available.</p>
-  </section>
-
-  <footer class="container footer">
-    <p>© Shahnex. All rights reserved.</p>
-    <p><a href="/">العربية</a> • <a href="mailto:user@shahnex.com">user@shahnex.com</a></p>
+  <footer>
+    <div class="container">
+      <p>© 2025 Shahnex. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
-
