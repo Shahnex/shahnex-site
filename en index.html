@@ -37,8 +37,20 @@
 </head>
 <body>
   <header>
-   <div class="container brand">
-    <img src="/assets/logo-icon.svg" alt="Shahnex" width="40" height="40">
+  <div class="container brand">
+    <!-- استبدال صورة الشعار بهذا الـ SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+         viewBox="0 0 128 128" aria-label="Shahnex" role="img">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#00A76F"/>
+          <stop offset="1" stop-color="#155EFB"/>
+        </linearGradient>
+      </defs>
+      <circle cx="64" cy="64" r="60" fill="url(#g)"/>
+      <path d="M42 42 L86 86 M86 42 L42 86" stroke="#F5F7FA" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+
     <div>
       <strong>Shahnex</strong>
       <div>Smart shipping. Better rates.</div>
@@ -106,4 +118,5 @@
   </footer>
 </body>
 </html>
+
 
