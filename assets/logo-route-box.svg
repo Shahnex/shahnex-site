@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="شحن إكس">
+  <defs>
+    <linearGradient id="gC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00A76F"/>
+      <stop offset="1" stop-color="#155EFB"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="104" height="104" rx="24" fill="url(#gC)"/>
+  <!-- مسار سريع -->
+  <g fill="none" stroke="#F5F7FA" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 66h32" stroke-width="6" opacity=".95"/>
+    <path d="M22 78h38" stroke-width="6" opacity=".85"/>
+    <path d="M20 54h34" stroke-width="6" opacity=".8"/>
+    <!-- صندوق هدف -->
+    <rect x="76" y="50" width="30" height="26" rx="6" stroke-width="6" />
+    <path d="M82 50l9 8 9-8" stroke-width="6"/>
+  </g>
+</svg>
