@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="148" viewBox="0 0 148 148" role="img" aria-label="شحن إكس">
+  <defs>
+    <linearGradient id="gMono" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#155EFB"/>
+      <stop offset="1" stop-color="#00A76F"/>
+    </linearGradient>
+  </defs>
+  <circle cx="74" cy="74" r="64" fill="url(#gMono)"/>
+  <path d="M74 36c-12 0-22 9-22 22 0 18 22 40 22 40s22-22 22-40c0-13-10-22-22-22z
+           M60 62h28 M64 70h20"
+        fill="none" stroke="#F5F7FA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="74" cy="28" r="6" fill="#FFB000"/>
+</svg>
