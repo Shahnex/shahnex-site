@@ -1,123 +1,286 @@
 
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>شحن إكس — شحن ذكي بأسعار تنافسية</title>
-  <meta name="description" content="شحن إكس — شحن ذكي بأسعار تنافسية. طلبات شحن بين المدن ومسارات رئيسية: الرياض، جدة، الدمام، خميس مشيط، القصيم.">
-  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
-  <link rel="manifest" href="manifest.json">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="شحن إكس — شحن ذكي بأسعار تنافسية">
-  <meta property="og:site_name" content="شحن إكس">
-  <meta property="og:description" content="شحن ذكي بأسعار تنافسية. اطلب عرض سعر الآن.">
+  <title>Shahnex | Smart shipping. Better rates.</title>
+  <meta name="description" content="Shahnex — Intercity shipping, private drivers, and city pickup agents to collect from your location.">
+  <link rel="canonical" href="https://www.shahnex.com/">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00A76F">
+  <meta property="og:title" content="Shahnex | Smart shipping. Better rates.">
+  <meta property="og:description" content="Carrier partners, private drivers, and city pickup option.">
   <meta property="og:url" content="https://www.shahnex.com/">
-  <meta property="og:image" content="https://www.shahnex.com/assets/logo-icon.svg">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
-    body { font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, "IBM Plex Sans Arabic", Tahoma, Arial; background:#F5F7FA; color:#1E1E24; }
-    header, footer { padding: 16px 0; }
-    .container { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-    .brand { display:flex; align-items:center; gap:12px; }
-    .brand img { width:40px; height:40px; }
-    .hero { padding: 32px 0; }
-    .cards { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 24px 0; }
-    .card { background:#fff; border-radius:12px; padding:16px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
-    form input, form textarea, form button { width:100%; padding:12px; margin:8px 0; border-radius:10px; border:1px solid #e5e7eb; font-size:16px; }
-    form button { background:#00A76F; color:#fff; border:none; cursor:pointer; }
-    form button:hover { background:#0d8b5d; }
-    .whatsapp { display:inline-block; margin-top:8px; background:#25D366; color:#fff; padding:10px 14px; border-radius:10px; text-decoration:none; }
-    .routes ul { display:grid; gap:6px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); padding:0; list-style:none; }
-    a { color:#155EFB; text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    body {font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#F5F7FA; color:#1E1E24; margin:0; line-height:1.6}
+    header, main, footer {max-width:1024px; margin:auto; padding:16px}
+    .hero {display:grid; gap:12px; padding:24px; background:#fff; border-radius:12px; border:1px solid #eaeaea}
+    .services {display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));}
+    .card {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px}
+    .card h3 {margin-top:0}
+    .btn {display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; background:#155EFB; color:#fff}
+    .btn-outline {background:#00A76F}
+    form {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; display:grid; gap:10px}
+    input, select, textarea {width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit}
+    label {display:block; font-weight:600; margin-bottom:6px}
+    .routes ul {margin:0; padding:0 18px}
+    .muted {color:#555}
+    .row {display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));}
+    small.hint {color:#666}
   </style>
 </head>
 <body>
-  <header>
-  <div class="container brand">
-    <!-- استبدال صورة الشعار بهذا الـ SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-         viewBox="0 0 128 128" aria-label="شحن إكس" role="img">
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#00A76F"/>
-          <stop offset="1" stop-color="#155EFB"/>
-        </linearGradient>
-      </defs>
-      <circle cx="64" cy="64" r="60" fill="url(#g)"/>
-      <path d="M42 42 L86 86 M86 42 L42 86" stroke="#F5F7FA" stroke-width="10" stroke-linecap="round"/>
-    </svg>
-
-    <div>
-      <strong>شحن إكس</strong>
-      <div>شحن ذكي بأسعار تنافسية</div>
-    </div>
+<header class="hero">
+  <h1>Smart shipping. Better rates.</h1>
+  <p class="muted">Three options for your needs: carrier partners, private driver, and city pickup agent to collect from your location.</p>
+  <div>
+    <a class="btn" href="#quote">Get a Quote</a>
+    <a class="btn btn-outline" data-wa target="_blank" rel="noopener">Chat on WhatsApp</a>
   </div>
 </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>اطلب عرض سعر لشحنتك</h1>
-      <p>نخدم المسارات الرئيسية: الرياض، جدة، الدمام، خميس مشيط، القصيم — ذهاب وعودة.</p>
-      <a class="whatsapp" href="https://wa.me/966590000819" target="_blank" rel="noopener">تواصل واتساب</a>
-    </section>
+<main>
+  <section class="card routes">
+    <h2>Routes</h2>
+    <ul>
+      <li>Riyadh ↔ Jeddah</li>
+      <li>Riyadh ↔ Dammam</li>
+      <li>Riyadh ↔ Khamis Mushait</li>
+      <li>Riyadh ↔ Al Ahsa</li>
+    </ul>
+  </section>
 
-    <section class="cards">
-      <div class="card">
-        <h2>طلب عرض سعر (عملاء)</h2>
-        <form action="https://formspree.io/f/mjkaaazd" method="POST">
-          <input type="text" name="full_name" required placeholder="الاسم الكامل">
-          <input type="email" name="email" required placeholder="البريد الإلكتروني">
-          <input type="tel" name="phone" required placeholder="رقم الجوال">
-          <textarea name="details" required placeholder="تفاصيل الشحنة (المصدر، الوجهة، النوع، الوزن/الأبعاد، الوقت)"></textarea>
-
-          <input type="hidden" name="_subject" value="New Quote Request (AR) — Shahnex / شحن إكس">
-          <input type="hidden" name="_redirect" value="https://www.shahnex.com/thanks.html">
-          <input type="text" name="_gotcha" style="display:none">
-
-          <button type="submit">إرسال الطلب</button>
-        </form>
-      </div>
-
-      <div class="card">
-        <h2>انضم كمورّد/سائق</h2>
-        <form action="https://formspree.io/f/mzzjjjqd" method="POST">
-          <input type="text" name="name" required placeholder="الاسم">
-          <input type="tel" name="phone" required placeholder="رقم الجوال">
-          <input type="text" name="vehicle" required placeholder="نوع المركبة (بيك آب، دينّا، تريلا...)">
-          <textarea name="coverage" placeholder="نطاق التغطية (مدن/مسارات)"></textarea>
-
-          <input type="hidden" name="_subject" value="New Carrier Application (AR) — Shahnex / شحن إكس">
-          <input type="hidden" name="_redirect" value="https://www.shahnex.com/thanks.html">
-          <input type="text" name="_gotcha" style="display:none">
-
-          <button type="submit">تسجيل</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="card routes">
-      <h2>المسارات المتاحة</h2>
-      <ul>
-        <li>الرياض ↔ جدة</li>
-        <li>الرياض ↔ الدمام</li>
-        <li>الرياض ↔ خميس مشيط</li>
-        <li>الرياض ↔ القصيم</li>
-      </ul>
-      <p>لقسم الإنجليزية، زر <a href="/en/">النسخة الإنجليزية</a>.</p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 شحن إكس — Shahnex. جميع الحقوق محفوظة.</p>
+  <section class="services">
+    <div class="card">
+      <h3>Carrier</h3>
+      <p>We arrange your intercity shipments with trusted partners.</p>
     </div>
-  </footer>
+    <div class="card">
+      <h3>Private Driver</h3>
+      <p>Direct, flexible transport for special requests.</p>
+    </div>
+    <div class="card">
+      <h3>City Pickup</h3>
+      <p>We pick up from your location inside the city and drop-off at our hub/carrier.</p>
+      <a class="btn" href="#quote">Request City Pickup</a>
+    </div>
+  </section>
+
+  <section id="quote" class="card">
+    <h2>Quote Request</h2>
+    <form action="https://formspree.io/f/mjkaaazd" method="POST">
+      <input type="hidden" name="_subject" value="Quote Request (EN)">
+      <input type="hidden" name="_redirect" value="/thanks.html">
+      <input type="text" name="_gotcha" style="display:none">
+
+      <div class="row">
+        <div>
+          <label>Full name</label>
+          <input type="text" name="full_name" placeholder="Your name" required>
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
+        </div>
+        <div>
+          <label>Service</label>
+          <select name="service_type" required>
+            <option value="">Choose</option>
+            <option>Carrier</option>
+            <option>Private Driver</option>
+            <option>City Pickup</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>From city</label>
+          <select name="from_city" required>
+            <option value="">Choose</option>
+            <option>Riyadh</option>
+            <option>Jeddah</option>
+            <option>Dammam</option>
+            <option>Khamis Mushait</option>
+            <option>Al Ahsa</option>
+          </select>
+        </div>
+        <div>
+          <label>To city</label>
+          <select name="to_city" required>
+            <option value="">Choose</option>
+            <option>Riyadh</option>
+            <option>Jeddah</option>
+            <option>Dammam</option>
+            <option>Khamis Mushait</option>
+            <option>Al Ahsa</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label>Drop-off method</label>
+        <div>
+          <label><input type="radio" name="pickup_option" value="from_warehouse" checked> Drop-off at warehouse</label>
+          <label><input type="radio" name="pickup_option" value="pickup_from_location"> Pick up from my location (City Pickup)</label>
+        </div>
+        <input type="hidden" name="tag" id="pickupTag" value="">
+      </div>
+
+      <div id="pickupFields" style="display:none">
+        <div class="row">
+          <div>
+            <label>Pickup city</label>
+            <select name="pickup_city">
+              <option value="">Choose</option>
+              <option>Riyadh</option>
+              <option>Jeddah</option>
+              <option>Dammam</option>
+              <option>Al Ahsa</option>
+            </select>
+          </div>
+          <div>
+            <label>Pickup address</label>
+            <input type="text" name="pickup_address" placeholder="Street, building number">
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>Preferred date</label>
+            <input type="date" name="pickup_date">
+          </div>
+          <div>
+            <label>Preferred time</label>
+            <input type="time" name="pickup_time">
+          </div>
+        </div>
+        <div>
+          <label>Notes (optional)</label>
+          <textarea name="pickup_notes" placeholder="Any special instructions"></textarea>
+        </div>
+        <small class="hint">Available in Riyadh, Jeddah, Dammam, Al Ahsa. Service hours 10:00–20:00.</small>
+      </div>
+
+      <div>
+        <label>Shipment details</label>
+        <textarea name="shipment_desc" placeholder="Weight, dimensions, details" rows="3" required></textarea>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="join" class="card">
+    <h2>Become a partner</h2>
+    <p class="muted">Join as intercity carrier/driver or as a city pickup agent.</p>
+    <form action="https://formspree.io/f/mzzjjjqd" method="POST">
+      <input type="hidden" name="_subject" value="Partner Application (EN)">
+      <input type="hidden" name="_redirect" value="/thanks.html">
+      <input type="text" name="_gotcha" style="display:none">
+      <input type="hidden" name="role" id="roleHidden" value="carrier_driver">
+
+      <div class="row">
+        <div>
+          <label>Joining as</label>
+          <select id="roleSelect" required>
+            <option value="carrier_driver">Carrier/Driver (intercity)</option>
+            <option value="city_agent">City Pickup Agent</option>
+          </select>
+        </div>
+        <div>
+          <label>Full name</label>
+          <input type="text" name="full_name" placeholder="Full name" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>City</label>
+          <select name="city" required>
+            <option value="">Choose</option>
+            <option>Riyadh</option>
+            <option>Jeddah</option>
+            <option>Dammam</option>
+            <option>Al Ahsa</option>
+            <option>Khamis Mushait</option>
+          </select>
+        </div>
+        <div>
+          <label>Vehicle</label>
+          <select name="vehicle" required>
+            <option value="">Choose</option>
+            <option>Bike</option>
+            <option>Sedan</option>
+            <option>Van</option>
+            <option>Pickup truck</option>
+            <option>Truck</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Availability</label>
+          <input type="text" name="availability" placeholder="e.g., 10:00–20:00" required>
+        </div>
+        <div>
+          <label>Phone/WhatsApp</label>
+          <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
+        </div>
+      </div>
+
+      <div>
+        <label>Previous experience (optional)</label>
+        <textarea name="experience" placeholder="Companies/years/areas"></textarea>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </section>
+</main>
+
+<footer class="card">
+  <p>© Shahnex</p>
+  <p><a data-wa target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+</footer>
+
+<script>
+  // WhatsApp number
+  const WHATSAPP_NUM = '966590000819';
+  document.querySelectorAll('a[data-wa]').forEach(a => a.href = `https://wa.me/${WHATSAPP_NUM}`);
+
+  // City Pickup toggle
+  const radios = document.querySelectorAll('input[name="pickup_option"]');
+  const pickupFields = document.getElementById('pickupFields');
+  const pickupTag = document.getElementById('pickupTag');
+  function togglePickup() {
+    const v = document.querySelector('input[name="pickup_option"]:checked')?.value;
+    const isPickup = v === 'pickup_from_location';
+    pickupFields.style.display = isPickup ? 'block' : 'none';
+    pickupTag.value = isPickup ? 'CITY_PICKUP' : '';
+    const city = pickupFields.querySelector('[name="pickup_city"]');
+    const addr = pickupFields.querySelector('[name="pickup_address"]');
+    if (city) city.required = isPickup;
+    if (addr) addr.required = isPickup;
+  }
+  radios.forEach(r => r.addEventListener('change', togglePickup));
+  togglePickup();
+
+  // Role sync
+  const roleSelect = document.getElementById('roleSelect');
+  const roleHidden = document.getElementById('roleHidden');
+  roleSelect?.addEventListener('change', () => roleHidden.value = roleSelect.value);
+</script>
 </body>
 </html>
-
 
