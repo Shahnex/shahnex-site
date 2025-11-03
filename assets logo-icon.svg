@@ -1,119 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 1200 400"
-     width="1200" height="400"
-     role="img" aria-label="شحن إكس - SHAHN X logo"
-     xmlns:xlink="http://www.w3.org/1999/xlink">
+/* ========== الهيدر والشعار (إصدار ثابت) ========== */
+nav {
+  position: -webkit-sticky; /* دعم Safari */
+  position: sticky;
+  top: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
-  <defs>
-    <!-- ==== تضمين الخطوط: الاستبدال مطلوب ==== -->
-    <style type="text/css"><![CDATA[
-      /* استبدل BASE64_WOFF2_CAIRO و BASE64_WOFF2_MONTSERRAT بسلاسل base64 لملفات woff2 الخاصة بك */
-      @font-face {
-        font-family: 'CairoEmbedded';
-        src: url("data:font/woff2;base64,BASE64_WOFF2_CAIRO") format("woff2");
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'CairoEmbedded';
-        src: url("data:font/woff2;base64,BASE64_WOFF2_CAIRO") format("woff2");
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'MontserratEmbedded';
-        src: url("data:font/woff2;base64,BASE64_WOFF2_MONTSERRAT") format("woff2");
-        font-weight: 600;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'MontserratEmbedded';
-        src: url("data:font/woff2;base64,BASE64_WOFF2_MONTSERRAT") format("woff2");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
+nav .nav-inner {
+  max-width: 1024px;
+  margin: auto;
+  padding: 8px 16px;
+  min-height: 56px;              /* ارتفاع شريط متّسق */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
 
-      /* نصوص افتراضية داخل الـSVG */
-      .arabic-name { font-family: 'CairoEmbedded', 'Noto Sans Arabic', sans-serif; font-weight:700; fill:#0B2D45; font-size:64px; }
-      .arabic-tag  { font-family: 'CairoEmbedded', 'Noto Sans Arabic', sans-serif; font-weight:500; fill:#0B2D45; font-size:22px; opacity:0.95; }
-      .eng-name    { font-family: 'MontserratEmbedded', Arial, sans-serif; font-weight:600; fill:#0B2D45; font-size:20px; }
-      .eng-tag     { font-family: 'MontserratEmbedded', Arial, sans-serif; font-weight:400; fill:#0B2D45; font-size:14px; opacity:0.9; }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;                /* يمنع تمدد الارتفاع */
+}
 
-      /* يساعد على جعل النص العربي ظاهرًا بشكل مستقيم */
-      text { dominant-baseline: hanging; }
-    ]]></style>
+.logo a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
 
-    <!-- Gradient مائل من أسفل اليسار إلى أعلى اليمين -->
-    <linearGradient id="gradDiagonal" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0B2D45"/>
-      <stop offset="100%" stop-color="#FF8A00"/>
-    </linearGradient>
+.logo svg {
+  display: block;
+  height: 40px;                  /* كان 48px — تقليل الارتفاع لتجنّب تمدد الشريط */
+  width: auto;
+}
 
-    <!-- ظل خفيف للأيقونة -->
-    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feOffset dy="6" in="SourceAlpha" result="off"/>
-      <feGaussianBlur in="off" stdDeviation="8" result="blur"/>
-      <feColorMatrix in="blur" type="matrix"
-        values="0 0 0 0 0
-                0 0 0 0 0
-                0 0 0 0 0
-                0 0 0 0.16" result="shadow"/>
-      <feBlend in="SourceGraphic" in2="shadow" mode="normal"/>
-    </filter>
-  </defs>
+.nav-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  <!-- خلفية شفافة -->
-  <rect width="100%" height="100%" fill="transparent"/>
+.nav-links a {
+  color: #155EFB;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .3s;
+}
 
-  <!-- مجموعة الأيقونة X على اليسار -->
-  <g id="icon" transform="translate(70,60)" filter="url(#softShadow)">
-    <!-- نرسم X من قطعتين مائلة (أشكال منحنية بسيطة لإحساس عصري) -->
-    <!-- القطعة اليسرى (أزرق) -->
-    <path d="M60 320
-             C40 260, 40 200, 120 140
-             L200 140
-             C120 200, 120 260, 140 320
-             Z"
-          fill="#0B2D45" transform="rotate(-18 160 190)"/>
-
-    <!-- القطعة اليمنى (تدرّج) -->
-    <path d="M300 40
-             C360 80, 420 140, 460 240
-             L400 280
-             C360 180, 300 120, 260 90
-             Z"
-          fill="url(#gradDiagonal)" transform="rotate(12 360 180)"/>
-
-    <!-- القوس/الطريق فوق الـX -->
-    <path d="M -20 40 C 140 -40, 360 -40, 620 40"
-          fill="none" stroke="url(#gradDiagonal)" stroke-width="14" stroke-linecap="round"/>
-
-    <!-- شرائط الطريق البيضاء (داش) -->
-    <g fill="#ffffff" opacity="0.95">
-      <rect x="120" y="18" width="38" height="6" rx="3" transform="rotate(-9 120 18)"/>
-      <rect x="205" y="8"  width="34" height="6" rx="3" transform="rotate(-5 205 8)"/>
-      <rect x="300" y="4"  width="42" height="6" rx="3" transform="rotate(0 300 4)"/>
-      <rect x="405" y="8"  width="36" height="6" rx="3" transform="rotate(5 405 8)"/>
-      <rect x="515" y="18" width="30" height="6" rx="3" transform="rotate(9 515 18)"/>
-    </g>
-  </g>
-
-  <!-- النصوص على اليمين -->
-  <g id="texts" transform="translate(420,80)">
-    <!-- بالعربية: نجعل النص محاذياً لليمين باستخدام text-anchor="end" ونضع direction rtl -->
-    <text class="arabic-name" x="660" y="0" text-anchor="end" direction="rtl">شحن إكس</text>
-    <text class="arabic-tag"  x="660" y="74" text-anchor="end" direction="rtl">شحن ذكي بأسعار منافسة</text>
-
-    <!-- الإنجليزية أسفل، محاذاة لليسار بالنسبة للمجموعة (نقل بسيط) -->
-    <g transform="translate(0,140)">
-      <text class="eng-name" x="0" y="0">SHAHN X</text>
-      <text class="eng-tag"  x="0" y="28">Smart shipping at competitive rates</text>
-    </g>
-  </g>
-
-</svg>
+.nav-links a:hover { color: #003ee8; }
