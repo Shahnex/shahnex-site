@@ -1,439 +1,186 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>شحنكس | شحن ذكي بأسعار تنافسية</title>
- <meta name="description" content="شحنكس — شحن ذكي بأسعار تنافسية بين المدن، مع سائق خاص، وخدمة مندوب داخل المدينة للاستلام أو التسليم.">
- <link rel="canonical" href="https://www.shahnex.com/">
- <link rel="manifest" href="/manifest.json">
- <meta name="theme-color" -color" content="#00A76F">
- <meta property="og:title" content="شحنكس | شحن ذكي بأسعار تنافسية">
- <meta property="og:description" content="شركة الشحن، السائق الخاص، ومندوب داخل المدينة (استلام أو تسليم).">
- <meta property="og:url" content="https://www.shahnex.com/">
- <meta property="og:type" content="website">
- <meta name="twitter:card" content="summary_large_image">
- <style>
- body {font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#F5F7FA; color:#1E1E24; margin:0; line-height:1.6}
- header, main, footer {max-width:1024px; margin:auto; padding:16px}
- .hero {display:grid; gap:12px; padding:24px; padding:24px; background:#fff; border-radius:12px; border:1px solid #eaeaea}
- .services {display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));}
- .card {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px}
- .card h3 {margin-top:0}
- .btn {display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; background:#155EFB; color:#fff}
- .btn-outline {background:#00A76F}
- form {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; display:grid; gap:10px}
- input, select, textarea {width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit}
- label {display:block; font-weight:600; :block; font-weight:600; margin-bottom:6px}
- .routes ul {margin:0; padding:0 18px}
- .muted {color:#555}
- .row {display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));}
- small.hint {color:#666}
- </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>شحنكس | شحن ذكي بأسعار تنافسية</title>
+  <meta name="description" content="شحنكس — شحن ذكي بأسعار تنافسية بين المدن، وخدمة مندوب داخل المدينة لاستلام الشحنات من موقعك.">
+  <link rel="canonical" href="https://www.shahnex.com/">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00A76F">
+  <meta property="og:title" content="شحنكس | شحن ذكي بأسعار تنافسية">
+  <meta property="og:description" content="خدمة شركة الشحن، السائق الخاص، ومندوب داخل المدينة.">
+  <meta property="og:url" content="https://www.shahnex.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    body {
+      font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:#F5F7FA;
+      color:#1E1E24;
+      margin:0;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+    header, main, footer {max-width:1024px; margin:auto; padding:16px}
+    .hero {
+      display:grid; gap:12px; padding:24px;
+      background:#fff; border-radius:12px; border:1px solid #eaeaea;
+      animation: fadeUp 0.8s ease forwards;
+    }
+    .services, .card, form {
+      animation: fadeUp 1s ease forwards;
+    }
+    .services {display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));}
+    .card {
+      background:#fff; border:1px solid #eaeaea;
+      border-radius:12px; padding:16px;
+      opacity:0; transform:translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+    .card h3 {margin-top:0}
+    .btn {
+      display:inline-block; padding:10px 14px; border-radius:10px;
+      text-decoration:none; background:#155EFB; color:#fff;
+      transition:all 0.3s ease;
+    }
+    .btn:hover {transform:translateY(-3px); background:#0d4edb;}
+    .btn-outline {background:#00A76F;}
+    .btn-outline:hover {background:#009260;}
+    form {
+      background:#fff; border:1px solid #eaeaea;
+      border-radius:12px; padding:16px; display:grid; gap:10px;
+    }
+    input, select, textarea {
+      width:100%; padding:10px; border:1px solid #ddd;
+      border-radius:8px; font-family:inherit; transition:border-color .3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color:#00A76F; outline:none;
+    }
+    label {display:block; font-weight:600; margin-bottom:6px}
+    .routes ul {margin:0; padding:0 18px}
+    .muted {color:#555}
+    .row {display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));}
+    small.hint {color:#666}
+
+    /* Animation */
+    @keyframes fadeUp {
+      from {opacity:0; transform:translateY(30px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+  </style>
 </head>
 <body>
 <header class="hero">
- <h1>شحنكس — شحن ذكي بأسعار تنافسية</h1>
- <p class="muted">3 خيارات: شركة الشحن، السائق الخاص، ومندوب داخل المدينة للاستلام أو التسليم.</p>
- <div>
- <a class="btn" href="#quote">اطلب عرض سعر</a>
- <a class="btn btn-outline" data-wa target="_blank" rel="noopener">تواصل عبر واتساب</a>
- </div>
+  <h1>شحنكس — شحن ذكي بأسعار تنافسية</h1>
+  <p class="muted">ثلاث خيارات تناسب احتياجك: شركة الشحن، السائق الخاص، ومندوب داخل المدينة لاستلام الشحنات من موقعك.</p>
+  <div>
+    <a class="btn" href="#quote">اطلب عرض سعر</a>
+    <a class="btn btn-outline" data-wa target="_blank" rel="noopener">تواصل عبر واتساب</a>
+  </div>
 </header>
 
 <main>
- <section class="card routes">
- <h2>المسارات</h2>
- <ul>
- <li>الرياض رات</h2>
- <ul>
- <li>الرياض >الرياض ↔ جدة</li>
- <li>الرياض ↔ الدمام</li>
- <li>الرياض ↔ خميس مشيط</li>
- <li>الرياض ↔ الأحساء</li>
- </ul>
- </section>
+  <section class="card routes">
+    <h2>المسارات</h2>
+    <ul>
+      <li>الرياض ↔ جدة</li>
+      <li>الرياض ↔ الدمام</li>
+      <li>الرياض ↔ خميس مشيط</li>
+      <li>الرياض ↔ الأحساء</li>
+    </ul>
+  </section>
 
- <section class="services">
- <div class="card">
- <h3>شركة الشحن</h3>
- <p>تنسيق شحنتك مع شركاء موثوقين بين المدن.</p>
- </div>
- <div class="card">
- <h3>السائق الخاص</h3>
- <p>نقل مباشر ومرن حسب احتياجك.</p>
- </div>
- <div class="card">
- <h3>مندوب داخل المدينة</h3>
- <p>استلام من موقعك إلى المستودع/شركة الشحن (First-mile) أو تسليم من المستودع إلى عميل الوجهة (Last-mile).</p>
- <a class="btn" ليم من المستودع إلى عميل الوجهة (Last-mile).</p>
- <a class="btn" btn" href="#quote">طلب خدمة المندوب</a>
- </div>
- </section>
+  <section class="services">
+    <div class="card">
+      <h3>شركة الشحن</h3>
+      <p>ننسّق شحنتك مع شركاء موثوقين بين المدن.</p>
+    </div>
+    <div class="card">
+      <h3>السائق الخاص</h3>
+      <p>نقل مباشر ومرن لطلباتك الخاصة.</p>
+    </div>
+    <div class="card">
+      <h3>مندوب داخل المدينة</h3>
+      <p>نستلم شحنتك من موقعك داخل المدينة ونسلّمها للمستودع/شركة الشحن.</p>
+      <a class="btn" href="#quote">طلب استلام من موقعك</a>
+    </div>
+  </section>
 
- <section id="quote" class="card">
- <h2>طلب عرض سعر</h2>
- <form action="https://formspree.io/f/mjkaaazd" method="POST">
- <input type="hidden" name="_subject" value="Quote Request (AR)">
- <input type="hidden" name="_redirect" value="/thanks.html">
- <input type="text" name="_gotcha" style="display:none">
+  <section id="quote" class="card">
+    <h2>طلب عرض سعر</h2>
+    <form action="https://formspree.io/f/mjkaaazd" method="POST">
+      <input type="hidden" name="_subject" value="Quote Request (AR)">
+      <input type="hidden" name="_redirect" value="/thanks.html">
+      <input type="text" name="_gotcha" style="display:none">
 
- <div class="row">
- <div>
- <label>الاسم الكامل</label>
- <input type="text" name="full_name" placeholder="الاسم الكامل" required>
- </div>
- <div>
- <label>البريد الإلكتروني</label>
- <input type="email" name="email" >
- <label>البريد الإلكتروني</label>
- <input type="email" name="email" ail" name="email" placeholder="you@example.com" required>
- </div>
- </div>
+      <div class="row">
+        <div>
+          <label>الاسم الكامل</label>
+          <input type="text" name="full_name" placeholder="الاسم الكامل" required>
+        </div>
+        <div>
+          <label>رقم الجوال</label>
+          <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
+        </div>
+      </div>
 
- <div class="row">
- <div>
- <label>رقم الجوال</label>
- <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
- </div>
- <div>
- <label>نوع الخدمة</label>
- <select name="service_type" required>
- <option value="">اختر</option>
- <option>شركة الشحن</option>
- <option>سائق خاص</option>
- <option>مندوب داخل المدينة</option>
- </select>
- </div>
- </div>
+      <div class="row">
+        <div>
+          <label>نوع الخدمة</label>
+          <select name="service_type" required>
+            <option value="">اختر</option>
+            <option>شركة الشحن</option>
+            <option>سائق خاص</option>
+            <option>مندوب داخل المدينة</option>
+          </select>
+        </div>
+        <div>
+          <label>من مدينة</label>
+          <select name="from_city" required>
+            <option value="">اختر</option>
+            <option>الرياض</option>
+            <option>جدة</option>
+            <option>الدمام</option>
+            <option>خميس مشيط</option>
+            <option>الأحساء</option>
+          </select>
+        </div>
+      </div>
 
- <div class="row">
- <div>
- <label>من مدينة</label>
- <select name="from_city" required>
- <option value="">اختر</option>
- div>
- </div>
+      <div class="row">
+        <div>
+          <label>إلى مدينة</label>
+          <select name="to_city" required>
+            <option value="">اختر</option>
+            <option>الرياض</option>
+            <option>جدة</option>
+            <option>الدمام</option>
+            <option>خميس مشيط</option>
+            <option>الأحساء</option>
+          </select>
+        </div>
+      </div>
 
- <div class="row">
- <div>
- <label>من مدينة</label>
- <select name="from_city" required>
- <option value="">اختر</option>
- >
- <option value="">اختر</option>
- </option>
- <option>الرياض</option>
- <option>جدة</option>
- <option>الدمام</option>
- <option>خميس مشيط</option>
- <option>الأحساء</option>
- </select>
- </div>
- <div>
- <label>إلى مدينة</label>
- <select name="to_city" required>
- <option value="">اختر</option>
- <option>الرياض</option>
- <option>جدة</option>
- <option>الدمام</option>
- <option>خميس مشيط</option>
- <option>الأحساء</option>
- </select>
- </div>
- </div>
+      <div>
+        <label>وصف الشحنة</label>
+        <textarea name="shipment_desc" placeholder="الوزن التقريبي، الأبعاد، أي تفاصيل مهمة" rows="3" required></textarea>
+      </div>
 
- <!-- طريقة التسليم العامة -->
- <div>
- <label>طريقة التسليم</label>
- <div>
- <label><input type="radio" name="pickup_option" </option>
- </select>
- </div>
- </div>
-
- <!-- طريقة التسليم العامة -->
- <div>
- <label>طريقة التسليم</label>
- <div>
- <label><input type="radio" name="pickup_option" <label><input type="radio" name="pickup_option" tion" value="from_warehouse" checked> تسليم للمستودع</label>
- <label><input type="radio" name="pickup_option" value="pickup_from_location"> مندوب داخل المدينة</label>
- </div>
- <input type="hidden" name="tag" id="pickupTag" value="">
- </div>
-
- <!-- نوع خدمة المندوب داخل المدينة -->
- <div id="cityAgentModeWrap" style="display:none; margin-top:8px">
- <label>خدمة المندوب داخل المدينة</label>
- <div>
- <label><input type="radio" name="city_agent_mode" value="first_mile" checked> من موقعي → المستودع/شركة الشحن</label>
- <label><input type="radio" name="city_agent_mode" value="last_mile"> من المستودع/شركة الشحن dio" name="city_agent_mode" value="last_mile"> من المستودع/شركة الشحن → عميل الوجهة</label>
- </div>
- </div>
-
- <!-- First-mile fields -->
- <div id="firstMileFields" style="display:none; margin-top:8px">
- <div class="row">
- <div>
- <label>مدينة الاستلام</label>
- <select name="pickup_city_first">
- <option value="">اختر</option>
- <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
- </select>
- </div>
- <div>
- <label>العنوان التفصيلي للاستلام</label>
- <input type="text" name="pickup_address_first" placeholder="الحي، الشارع، رقم المبنى">
- </div>
- </div>
- <div لاستلام</label>
- <input type="text" name="pickup_address_first" placeholder="الحي، الشارع، رقم المبنى">
- </div>
- </div>
- <div /div>
- </div>
- <div
- <div <div v class="row">
- <div>
- <label>التاريخ المفضل</label>
- <input type="date" name="pickup_date_first">
- </div>
- <div>
- <label>الوقت المفضل</label>
- <input type="time" name="pickup_time_first">
- </div>
- </div>
- <div>
- <label>تعليمات خاصة (اختياري)</label>
- <textarea name="pickup_notes_first" placeholder="مثال: تواصل قبل الوصول"></textarea>
- </div>
- <small class="hint">خدمة الاستلام متاحة في: الرياض، جدة، الدمام، الأحساء، خميس مشيط. 10:00–20:00.</small>
- </div>
-
- <!-- Last-mile fields -->
- <div id="lastMileFields" : الرياض، جدة، الدمام، الأحساء، خميس مشيط. 10:00–20:00.</small>
- </div>
-
- <!-- Last-mile fields -->
- <div id="lastMileFields" astMileFields" style="display:none; margin-top:8px">
- <div class="row">
- <div>
- <label>مدينة التسليم</label>
- <select name="delivery_city_last">
- <option value="">اختر</option>
- <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
- </select>
- </div>
- <div>
- <label>عنوان العميل للتسليم</label>
- <input type="text" name="delivery_address_last" placeholder="الحي، الشارع، رقم المبنى">
- </div>
- </div>
- <div class="row">
- <div>
- <label>اسم جهة الاستلام</label>
- <input type="text" name="delivery_contact_name" placeholder="اسم العميل المستلم">
- </div>
- <div>
- <label>رقم تواصل <label>اسم جهة الاستلام</label>
- <input type="text" name="delivery_contact_name" placeholder="اسم العميل المستلم">
- </div>
- <div>
- <label>رقم تواصل div>
- <div>
- <label>رقم تواصل <label>رقم تواصل صل للتسليم</label>
- <input type="tel" name="delivery_contact_phone" placeholder="9665xxxxxxxx">
- </div>
- </div>
- <div class="row">
- <div>
- <label>التاريخ المفضل</label>
- <input type="date" name="delivery_date_last">
- </div>
- <div>
- <label>الوقت المفضل</label>
- <input type="time" name="delivery_time_last">
- </div>
- </div>
- <div>
- <label>تعليمات خاصة (اختياري)</label>
- <textarea name="delivery_notes_last" placeholder="مثال: اتصال قبل الوصول، بوابة محددة"></textarea>
- </div>
- <small class="hint">خدمة التسليم متاحة في: الرياض، جدة، الدمام، الأحساء، خميس مشيط. 10:00–20:00.</small>
- </div>
-
- بة محددة"></textarea>
- </div>
- <small class="hint">خدمة التسليم متاحة في: الرياض، جدة، الدمام، الأحساء، خميس مشيط. 10:00–20:00.</small>
- </div>
-
- ll>
- </div>
-
- v>
-
- <div>
- <label>وصف الشحنة</label>
- <textarea name="shipment_desc" placeholder="الوزن التقريبي، الأبعاد، أي تفاصيل مهمة" rows="3" required></textarea>
- </div>
-
- <button class="btn" type="submit">إرسال الطلب</button>
- </form>
- </section>
-
- <section id="join" class="card">
- <h2>انضم كشريك نقل</h2>
- <p class="muted">سائق/مورّد بين المدن أو مندوب داخل المدينة.</p>
- <form action="https://formspree.io/f/mzzjjjqd" method="POST">
- <input type="hidden" name="_subject" value="Partner Application (AR)">
- <input type="hidden" name="_redirect" value="/thanks.html">
- <input type="text" name="_gotcha" style="display:none">
- <input type="hidden" name="role" id="roleHidden" :none">
- <input type="hidden" name="role" id="roleHidden" den" value="carrier_driver">
-
- <div class="row">
- <div>
- <label>نوع الانضمام</label>
- <select id="roleSelect" required>
- <option value="carrier_driver">سائق/مورّد بين المدن</option>
- <option value="city_agent">مندوب داخل المدينة</option>
- </select>
- </div>
- <div>
- <label>الاسم الكامل</label>
- <input type="text" name="full_name" placeholder="الاسم الكامل" required>
- </div>
- </div>
-
- <div class="row">
- <div>
- <label>المدينة</label>
- <select name="city" required>
- <option value="">اختر</option>
- <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
- </select>
- </div>
- <div>
- 
- <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
- </select>
- </div>
- <div>
- ct>
- </div>
- <div>
- <div>
- <div>
- <label>نوع المركبة</label>
- <select name="vehicle" required>
- <option value="">اختر</option>
- <option>دراجة</option><option>سيدان</option><option>فان</option><option>شاحنة صغيرة</option><option>شاحنة</option>
- </select>
- </div>
- </div>
-
- <div class="row">
- <div>
- ect>
- </div>
- </div>
-
- <div class="row">
- <div>
- s="row">
- <div>
- <div>
- <label>التوفّر</label>
- <input type="text" input type="text" name="availability" placeholder="مثال: 10ص–8م" required>
- </div>
- /div>
- <div>
- <div>
- <label>الجوال/واتساب</label>
- <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
- </div>
- </div>
-
- <div>
- <label>خبرة سابقة (اختياري)</label>
- <textarea name="experience" اري)</label>
- <textarea name="experience" ience" placeholder="الشركات/السنوات/المناطق"></textarea>
- </div>
-
- <button class="btn" ass="btn" type="submit">إرسال</button>
- </form>
- >
- </section>
+      <button class="btn" type="submit">إرسال الطلب</button>
+    </form>
+  </section>
 </main>
 
 <footer class="card">
- <p>© شحنكس | | Shahnex</p>
- <p><a data-wa target="_blank" rel="noopener">تواصل واتساب</a></p>
+  <p>© شحنكس | Shahnex</p>
+  <p><a data-wa target="_blank" rel="noopener">تواصل واتساب</a></p>
 </footer>
 
 <script>
- // WhatsApp number r (موحّد)
- const WHATSAPP_NUM = '966590000819';
- document.querySelectorAll('a[data-wa]').forEach(a => a.href = `https://wa.me/${WHATSAPP_NUM}`);
-
- // // تحكم بخدمة المندوب: first-mile / last-mile
- const pickupRadios = document.querySelectorAll('input[name="pickup_option"]');
- const cityAgentWrap = document.getElementById('cityAgentModeWrap');
- const firstMile = = document.getElementById('firstMileFields');
- const lastMile = document.getElementById('lastMileFields');
- const tagInput = document.getElementById('pickupTag');
-
- function setRequiredByNames(names, req) {
- names.forEach(n => {
- const el = document.querySelector(`[name="${n}"]`);
- if (el) el.required = !!req;
- });
- }
-
- function toggleAll() {
- const pickupVal ll() {
- const pickupVal al = document.querySelector('input[name="pickup_option"]:checked')?.value;
- const isCityAgent = pickupVal === 'pickup_from_location';
- cityAgentWrap.style.display = isCityAgent ? 'block' : 'none';
-
- if (!isCityAgent) {
- firstMile.style.display = 'none';
- lastMile.style.display = 'none';
- tagInput.value = '';
- tagInput.value = '';
- 
- setRequiredByNames(['pickup_city_first','pickup_address_first','delivery_city_last','delivery_address_last','delivery_contact_name','delivery_contact_phone'], false);
- return;
- }
-
- const mode = document.querySelector('input[name="city_agent_mode"]:checked')?.value || 'first_mile';
- if (mode === 'first_mile') {
- firstMile.style.display = 'block';
- lastMile.style.display = 'none';
- tagInput.value = 'CITY_PICKUP_FIRST_MILE';
- setRequiredByNames(['pickup_city_first','pickup_address_first'], true);
- irst','pickup_address_first'], true);
- setRequiredByNames(['delivery_city_last','delivery_address_last','delivery_contact_name','delivery_contact_phone'], false);
- } else {
- firstMile.style.display = 'none';
- lastMile.style.display = 'block';
- tagInput.value = 'CITY_DELIVERY_LAST_MILE';
- setRequiredByNames(['delivery_city_last','delivery_address_last','delivery_contact_name','delivery_contact_phone'], true);
- setRequiredByNames(['pickup_city_first','pickup_address_first'], false);
- }
- }
-
- pickupRadios.forEach(r => r.addEventListener('change', toggleAll));
- EventListener('change', toggleAll));
- document.addEventListener('change', (e) => {
- if (e.target && e.target.name === 'city_agent_mode') toggleAll();
- });
- toggleAll();
-
- // Role sync for partners form
- const roleSelect = document.getElementById('roleSelect');
- const roleHidden = document.getElementById('roleHidden');
- roleSelect?.addEventListener('change', () => roleHidden.value = roleSelect.value);
+  const WHATSAPP_NUM = '966590000819';
+  document.querySelectorAll('a[data-wa]').forEach(a => a.href = `https://wa.me/${WHATSAPP_NUM}`);
 </script>
 </body>
 </html>
