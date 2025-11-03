@@ -1,25 +1,127 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="شحن إكس">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Filename suggestion: shahn-x-logo.svg
+  Usage: save as .svg and embed <img src="shahn-x-logo.svg"> or paste inline in HTML.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1200 420"
+     width="1200" height="420" role="img" aria-label="شحن إكس - Shahn X logo">
   <defs>
-    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#00A76F"/>
-      <stop offset="1" stop-color="#155EFB"/>
+    <!-- Gradient for the X -->
+    <linearGradient id="gradX" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#FF8A00"/>
+      <stop offset="100%" stop-color="#0B2D45"/>
     </linearGradient>
-    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+
+    <!-- Gradient stroke for the arc/road -->
+    <linearGradient id="gradRoad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#0B2D45"/>
+      <stop offset="100%" stop-color="#0B2D45" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Drop shadow (subtle) -->
+    <filter id="fs" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset result="offOut" in="SourceAlpha" dx="0" dy="6" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="8" />
+      <feColorMatrix result="matOut" in="blurOut"
+                     type="matrix"
+                     values="0 0 0 0 0
+                             0 0 0 0 0
+                             0 0 0 0 0
+                             0 0 0 0.15"/>
+      <feBlend in="SourceGraphic" in2="matOut" mode="normal"/>
     </filter>
+
+    <!-- Simple rounded mask for the road dashes -->
+    <mask id="dashMask">
+      <rect x="0" y="0" width="1200" height="420" fill="#fff"/>
+    </mask>
   </defs>
-  <!-- خلفية دائرية متدرجة -->
-  <circle cx="64" cy="64" r="60" fill="url(#grad)" filter="url(#s)"/>
-  <!-- أيقونة شاحنة مبسطة -->
-  <g transform="translate(18,44)" fill="none" stroke="#F5F7FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="8" y="12" width="44" height="22" rx="4"/>
-    <path d="M52 18h16l8 10v6H52z"/>
-    <circle cx="24" cy="40" r="6" fill="#F5F7FA" stroke="none"/>
-    <circle cx="60" cy="40" r="6" fill="#F5F7FA" stroke="none"/>
-    <path d="M18 12v-6h18"/>
+
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- LEFT: the X icon group -->
+  <g id="icon" transform="translate(120,60)" filter="url(#fs)">
+    <!-- left leg of X (navy) -->
+    <path d="M0 240
+             C40 140, 120 60, 240 30
+             L300 30
+             C200 80, 120 160, 60 260
+             Z"
+          fill="#0B2D45"/>
+    <!-- right leg of X (orange) -->
+    <path d="M360 30
+             C430 70, 480 130, 520 220
+             L460 260
+             C420 180, 370 110, 300 70
+             Z"
+          fill="url(#gradX)"/>
+
+    <!-- curved arc (road) above X -->
+    <path d="M -20 40
+             C 140 -40, 360 -40, 620 40"
+          fill="none"
+          stroke="url(#gradRoad)"
+          stroke-width="14"
+          stroke-linecap="round"/>
+
+    <!-- road dashed lines (white) along the arc:
+         we draw several short strokes positioned along the path using small rotated rectangles approximation.
+         (keeps it pure SVG without external scripts). -->
+    <!-- manually placed dashes along the curve -->
+    <g fill="#ffffff" opacity="0.95">
+      <rect x="120" y="18" width="38" height="6" rx="3" transform="rotate(-9 120 18)"/>
+      <rect x="205" y="8"  width="34" height="6" rx="3" transform="rotate(-5 205 8)"/>
+      <rect x="300" y="4"  width="42" height="6" rx="3" transform="rotate(0 300 4)"/>
+      <rect x="405" y="8"  width="36" height="6" rx="3" transform="rotate(5 405 8)"/>
+      <rect x="515" y="18" width="30" height="6" rx="3" transform="rotate(9 515 18)"/>
+    </g>
   </g>
-  <!-- حرف X في الوسط -->
-  <g transform="translate(0,0)">
-    <path d="M44 44 L84 84 M84 44 L44 84" stroke="#F5F7FA" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- RIGHT: Arabic name & tagline -->
+  <g id="arabic" transform="translate(480,120)" text-anchor="start">
+    <!-- Arabic company name -->
+    <text x="0" y="0"
+          font-family="'Noto Kufi Arabic', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif"
+          font-size="64"
+          fill="#0B2D45"
+          font-weight="700"
+          direction="rtl">
+      شحن إكس
+    </text>
+
+    <!-- Arabic tagline below name -->
+    <text x="0" y="56"
+          font-family="'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif"
+          font-size="22"
+          fill="#0B2D45"
+          opacity="0.95"
+          direction="rtl">
+      شحن ذكي بأسعار منافسة
+    </text>
   </g>
+
+  <!-- BOTTOM-LEFT: English name & tagline (smaller) -->
+  <g id="english" transform="translate(120,320)" text-anchor="start" >
+    <text x="0" y="0"
+          font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif"
+          font-size="20"
+          fill="#0B2D45"
+          font-weight="700"
+          letter-spacing="1">
+      SHAHN X
+    </text>
+
+    <text x="0" y="28"
+          font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif"
+          font-size="14"
+          fill="#0B2D45"
+          opacity="0.85">
+      Smart shipping at competitive rates
+    </text>
+  </g>
+
+  <!-- OPTIONAL: make entire logo responsive by grouping and centering when embedded inline -->
+  <!-- End of SVG -->
 </svg>
