@@ -1,39 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1200 400"
+     width="1200" height="400"
+     role="img" aria-label="شحن إكس - SHAHN X logo"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
   <defs>
+    <!-- ==== تضمين الخطوط: الاستبدال مطلوب ==== -->
+    <style type="text/css"><![CDATA[
+      /* استبدل BASE64_WOFF2_CAIRO و BASE64_WOFF2_MONTSERRAT بسلاسل base64 لملفات woff2 الخاصة بك */
+      @font-face {
+        font-family: 'CairoEmbedded';
+        src: url("data:font/woff2;base64,BASE64_WOFF2_CAIRO") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'CairoEmbedded';
+        src: url("data:font/woff2;base64,BASE64_WOFF2_CAIRO") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'MontserratEmbedded';
+        src: url("data:font/woff2;base64,BASE64_WOFF2_MONTSERRAT") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'MontserratEmbedded';
+        src: url("data:font/woff2;base64,BASE64_WOFF2_MONTSERRAT") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* نصوص افتراضية داخل الـSVG */
+      .arabic-name { font-family: 'CairoEmbedded', 'Noto Sans Arabic', sans-serif; font-weight:700; fill:#0B2D45; font-size:64px; }
+      .arabic-tag  { font-family: 'CairoEmbedded', 'Noto Sans Arabic', sans-serif; font-weight:500; fill:#0B2D45; font-size:22px; opacity:0.95; }
+      .eng-name    { font-family: 'MontserratEmbedded', Arial, sans-serif; font-weight:600; fill:#0B2D45; font-size:20px; }
+      .eng-tag     { font-family: 'MontserratEmbedded', Arial, sans-serif; font-weight:400; fill:#0B2D45; font-size:14px; opacity:0.9; }
+
+      /* يساعد على جعل النص العربي ظاهرًا بشكل مستقيم */
+      text { dominant-baseline: hanging; }
+    ]]></style>
+
+    <!-- Gradient مائل من أسفل اليسار إلى أعلى اليمين -->
     <linearGradient id="gradDiagonal" x1="0%" y1="100%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0B2D45"/>
       <stop offset="100%" stop-color="#FF8A00"/>
     </linearGradient>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Montserrat:wght@500;700&display=swap');
-      .ar-name { font-family:'Cairo',sans-serif; font-weight:700; fill:#0B2D45; font-size:64px; }
-      .ar-tag { font-family:'Cairo',sans-serif; font-weight:500; fill:#0B2D45; font-size:22px; opacity:0.9; }
-      .en-name { font-family:'Montserrat',sans-serif; font-weight:700; fill:#0B2D45; font-size:22px; }
-      .en-tag { font-family:'Montserrat',sans-serif; font-weight:500; fill:#0B2D45; font-size:16px; opacity:0.8; }
-    </style>
+
+    <!-- ظل خفيف للأيقونة -->
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feOffset dy="6" in="SourceAlpha" result="off"/>
+      <feGaussianBlur in="off" stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0.16" result="shadow"/>
+      <feBlend in="SourceGraphic" in2="shadow" mode="normal"/>
+    </filter>
   </defs>
 
+  <!-- خلفية شفافة -->
   <rect width="100%" height="100%" fill="transparent"/>
 
-  <g transform="translate(70,60)">
-    <path d="M60 320C40 260,40 200,120 140L200 140C120 200,120 260,140 320Z" fill="#0B2D45" transform="rotate(-18 160 190)"/>
-    <path d="M300 40C360 80,420 140,460 240L400 280C360 180,300 120,260 90Z" fill="url(#gradDiagonal)" transform="rotate(12 360 180)"/>
-    <path d="M -20 40 C 140 -40, 360 -40, 620 40" fill="none" stroke="url(#gradDiagonal)" stroke-width="14" stroke-linecap="round"/>
-    <g fill="#fff" opacity="0.95">
-      <rect x="120" y="18" width="38" height="6" rx="3"/>
-      <rect x="205" y="8"  width="34" height="6" rx="3"/>
-      <rect x="300" y="4"  width="42" height="6" rx="3"/>
-      <rect x="405" y="8"  width="36" height="6" rx="3"/>
-      <rect x="515" y="18" width="30" height="6" rx="3"/>
+  <!-- مجموعة الأيقونة X على اليسار -->
+  <g id="icon" transform="translate(70,60)" filter="url(#softShadow)">
+    <!-- نرسم X من قطعتين مائلة (أشكال منحنية بسيطة لإحساس عصري) -->
+    <!-- القطعة اليسرى (أزرق) -->
+    <path d="M60 320
+             C40 260, 40 200, 120 140
+             L200 140
+             C120 200, 120 260, 140 320
+             Z"
+          fill="#0B2D45" transform="rotate(-18 160 190)"/>
+
+    <!-- القطعة اليمنى (تدرّج) -->
+    <path d="M300 40
+             C360 80, 420 140, 460 240
+             L400 280
+             C360 180, 300 120, 260 90
+             Z"
+          fill="url(#gradDiagonal)" transform="rotate(12 360 180)"/>
+
+    <!-- القوس/الطريق فوق الـX -->
+    <path d="M -20 40 C 140 -40, 360 -40, 620 40"
+          fill="none" stroke="url(#gradDiagonal)" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- شرائط الطريق البيضاء (داش) -->
+    <g fill="#ffffff" opacity="0.95">
+      <rect x="120" y="18" width="38" height="6" rx="3" transform="rotate(-9 120 18)"/>
+      <rect x="205" y="8"  width="34" height="6" rx="3" transform="rotate(-5 205 8)"/>
+      <rect x="300" y="4"  width="42" height="6" rx="3" transform="rotate(0 300 4)"/>
+      <rect x="405" y="8"  width="36" height="6" rx="3" transform="rotate(5 405 8)"/>
+      <rect x="515" y="18" width="30" height="6" rx="3" transform="rotate(9 515 18)"/>
     </g>
   </g>
 
-  <g transform="translate(420,80)">
-    <text class="ar-name" x="660" y="0" text-anchor="end" direction="rtl">شحن إكس</text>
-    <text class="ar-tag" x="660" y="74" text-anchor="end" direction="rtl">شحن ذكي بأسعار تنافسية</text>
+  <!-- النصوص على اليمين -->
+  <g id="texts" transform="translate(420,80)">
+    <!-- بالعربية: نجعل النص محاذياً لليمين باستخدام text-anchor="end" ونضع direction rtl -->
+    <text class="arabic-name" x="660" y="0" text-anchor="end" direction="rtl">شحن إكس</text>
+    <text class="arabic-tag"  x="660" y="74" text-anchor="end" direction="rtl">شحن ذكي بأسعار منافسة</text>
+
+    <!-- الإنجليزية أسفل، محاذاة لليسار بالنسبة للمجموعة (نقل بسيط) -->
     <g transform="translate(0,140)">
-      <text class="en-name" x="0" y="0">SHAHN X</text>
-      <text class="en-tag" x="0" y="28">Smart shipping at competitive rates</text>
+      <text class="eng-name" x="0" y="0">SHAHN X</text>
+      <text class="eng-tag"  x="0" y="28">Smart shipping at competitive rates</text>
     </g>
   </g>
+
 </svg>
