@@ -33,26 +33,63 @@
     .row {display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));}
     small.hint {color:#666}
 
-    /* ========== الهيدر والشعار ========== */
-    nav {
-      background:#fff;
-      border-bottom:1px solid #eaeaea;
-      position:sticky; top:0; z-index:100;
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
-      animation: fadeInSlide .8s ease both;
-    }
-    nav .nav-inner {
-      max-width:1024px; margin:auto; padding:10px 16px;
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .logo {display:flex; align-items:center; gap:8px;}
-    .logo a {display:inline-flex; align-items:center; text-decoration:none;}
-    .logo svg { height:48px; width:auto; display:block; }
-    .nav-links a {
-      margin-inline:8px; color:#155EFB; font-weight:600;
-      text-decoration:none; transition:color .3s;
-    }
-    .nav-links a:hover {color:#003ee8;}
+ /* ========== الهيدر والشعار (إصدار ثابت) ========== */
+nav {
+  position: -webkit-sticky; /* دعم Safari */
+  position: sticky;
+  top: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav .nav-inner {
+  max-width: 1024px;
+  margin: auto;
+  padding: 8px 16px;
+  min-height: 56px;              /* ارتفاع شريط متّسق */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;                /* يمنع تمدد الارتفاع */
+}
+
+.logo a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo svg {
+  display: block;
+  height: 40px;                  /* كان 48px — تقليل الارتفاع لتجنّب تمدد الشريط */
+  width: auto;
+}
+
+.nav-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links a {
+  color: #155EFB;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.nav-links a:hover { color: #003ee8; }
 
     @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
     @keyframes fadeInSlide {from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);}}
@@ -425,3 +462,4 @@
   </script>
 </body>
 </html>
+
