@@ -1,127 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Filename suggestion: shahn-x-logo.svg
-  Usage: save as .svg and embed <img src="shahn-x-logo.svg"> or paste inline in HTML.
--->
-<svg xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 1200 420"
-     width="1200" height="420" role="img" aria-label="شحن إكس - Shahn X logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
   <defs>
-    <!-- Gradient for the X -->
-    <linearGradient id="gradX" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"  stop-color="#FF8A00"/>
-      <stop offset="100%" stop-color="#0B2D45"/>
+    <linearGradient id="gradDiagonal" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B2D45"/>
+      <stop offset="100%" stop-color="#FF8A00"/>
     </linearGradient>
-
-    <!-- Gradient stroke for the arc/road -->
-    <linearGradient id="gradRoad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"  stop-color="#0B2D45"/>
-      <stop offset="100%" stop-color="#0B2D45" stop-opacity="0.95"/>
-    </linearGradient>
-
-    <!-- Drop shadow (subtle) -->
-    <filter id="fs" x="-20%" y="-20%" width="140%" height="140%">
-      <feOffset result="offOut" in="SourceAlpha" dx="0" dy="6" />
-      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="8" />
-      <feColorMatrix result="matOut" in="blurOut"
-                     type="matrix"
-                     values="0 0 0 0 0
-                             0 0 0 0 0
-                             0 0 0 0 0
-                             0 0 0 0.15"/>
-      <feBlend in="SourceGraphic" in2="matOut" mode="normal"/>
-    </filter>
-
-    <!-- Simple rounded mask for the road dashes -->
-    <mask id="dashMask">
-      <rect x="0" y="0" width="1200" height="420" fill="#fff"/>
-    </mask>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Montserrat:wght@500;700&display=swap');
+      .ar-name { font-family:'Cairo',sans-serif; font-weight:700; fill:#0B2D45; font-size:64px; }
+      .ar-tag { font-family:'Cairo',sans-serif; font-weight:500; fill:#0B2D45; font-size:22px; opacity:0.9; }
+      .en-name { font-family:'Montserrat',sans-serif; font-weight:700; fill:#0B2D45; font-size:22px; }
+      .en-tag { font-family:'Montserrat',sans-serif; font-weight:500; fill:#0B2D45; font-size:16px; opacity:0.8; }
+    </style>
   </defs>
 
-  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect width="100%" height="100%" fill="transparent"/>
 
-  <!-- LEFT: the X icon group -->
-  <g id="icon" transform="translate(120,60)" filter="url(#fs)">
-    <!-- left leg of X (navy) -->
-    <path d="M0 240
-             C40 140, 120 60, 240 30
-             L300 30
-             C200 80, 120 160, 60 260
-             Z"
-          fill="#0B2D45"/>
-    <!-- right leg of X (orange) -->
-    <path d="M360 30
-             C430 70, 480 130, 520 220
-             L460 260
-             C420 180, 370 110, 300 70
-             Z"
-          fill="url(#gradX)"/>
-
-    <!-- curved arc (road) above X -->
-    <path d="M -20 40
-             C 140 -40, 360 -40, 620 40"
-          fill="none"
-          stroke="url(#gradRoad)"
-          stroke-width="14"
-          stroke-linecap="round"/>
-
-    <!-- road dashed lines (white) along the arc:
-         we draw several short strokes positioned along the path using small rotated rectangles approximation.
-         (keeps it pure SVG without external scripts). -->
-    <!-- manually placed dashes along the curve -->
-    <g fill="#ffffff" opacity="0.95">
-      <rect x="120" y="18" width="38" height="6" rx="3" transform="rotate(-9 120 18)"/>
-      <rect x="205" y="8"  width="34" height="6" rx="3" transform="rotate(-5 205 8)"/>
-      <rect x="300" y="4"  width="42" height="6" rx="3" transform="rotate(0 300 4)"/>
-      <rect x="405" y="8"  width="36" height="6" rx="3" transform="rotate(5 405 8)"/>
-      <rect x="515" y="18" width="30" height="6" rx="3" transform="rotate(9 515 18)"/>
+  <g transform="translate(70,60)">
+    <path d="M60 320C40 260,40 200,120 140L200 140C120 200,120 260,140 320Z" fill="#0B2D45" transform="rotate(-18 160 190)"/>
+    <path d="M300 40C360 80,420 140,460 240L400 280C360 180,300 120,260 90Z" fill="url(#gradDiagonal)" transform="rotate(12 360 180)"/>
+    <path d="M -20 40 C 140 -40, 360 -40, 620 40" fill="none" stroke="url(#gradDiagonal)" stroke-width="14" stroke-linecap="round"/>
+    <g fill="#fff" opacity="0.95">
+      <rect x="120" y="18" width="38" height="6" rx="3"/>
+      <rect x="205" y="8"  width="34" height="6" rx="3"/>
+      <rect x="300" y="4"  width="42" height="6" rx="3"/>
+      <rect x="405" y="8"  width="36" height="6" rx="3"/>
+      <rect x="515" y="18" width="30" height="6" rx="3"/>
     </g>
   </g>
 
-  <!-- RIGHT: Arabic name & tagline -->
-  <g id="arabic" transform="translate(480,120)" text-anchor="start">
-    <!-- Arabic company name -->
-    <text x="0" y="0"
-          font-family="'Noto Kufi Arabic', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif"
-          font-size="64"
-          fill="#0B2D45"
-          font-weight="700"
-          direction="rtl">
-      شحن إكس
-    </text>
-
-    <!-- Arabic tagline below name -->
-    <text x="0" y="56"
-          font-family="'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif"
-          font-size="22"
-          fill="#0B2D45"
-          opacity="0.95"
-          direction="rtl">
-      شحن ذكي بأسعار منافسة
-    </text>
+  <g transform="translate(420,80)">
+    <text class="ar-name" x="660" y="0" text-anchor="end" direction="rtl">شحن إكس</text>
+    <text class="ar-tag" x="660" y="74" text-anchor="end" direction="rtl">شحن ذكي بأسعار تنافسية</text>
+    <g transform="translate(0,140)">
+      <text class="en-name" x="0" y="0">SHAHN X</text>
+      <text class="en-tag" x="0" y="28">Smart shipping at competitive rates</text>
+    </g>
   </g>
-
-  <!-- BOTTOM-LEFT: English name & tagline (smaller) -->
-  <g id="english" transform="translate(120,320)" text-anchor="start" >
-    <text x="0" y="0"
-          font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif"
-          font-size="20"
-          fill="#0B2D45"
-          font-weight="700"
-          letter-spacing="1">
-      SHAHN X
-    </text>
-
-    <text x="0" y="28"
-          font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif"
-          font-size="14"
-          fill="#0B2D45"
-          opacity="0.85">
-      Smart shipping at competitive rates
-    </text>
-  </g>
-
-  <!-- OPTIONAL: make entire logo responsive by grouping and centering when embedded inline -->
-  <!-- End of SVG -->
 </svg>
