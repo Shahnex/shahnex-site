@@ -14,61 +14,21 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <style>
-    body {
-      font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background:#F5F7FA;
-      color:#1E1E24;
-      margin:0;
-      line-height:1.6;
-      scroll-behavior:smooth;
-    }
+    body {font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#F5F7FA; color:#1E1E24; margin:0; line-height:1.6}
     header, main, footer {max-width:1024px; margin:auto; padding:16px}
-    .hero {
-      display:grid; gap:12px; padding:24px;
-      background:#fff; border-radius:12px; border:1px solid #eaeaea;
-      animation: fadeUp 0.8s ease forwards;
-    }
-    .services, .card, form {
-      animation: fadeUp 1s ease forwards;
-    }
+    .hero {display:grid; gap:12px; padding:24px; background:#fff; border-radius:12px; border:1px solid #eaeaea}
     .services {display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));}
-    .card {
-      background:#fff; border:1px solid #eaeaea;
-      border-radius:12px; padding:16px;
-      opacity:0; transform:translateY(20px);
-      animation: fadeUp 0.8s ease forwards;
-    }
+    .card {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px}
     .card h3 {margin-top:0}
-    .btn {
-      display:inline-block; padding:10px 14px; border-radius:10px;
-      text-decoration:none; background:#155EFB; color:#fff;
-      transition:all 0.3s ease;
-    }
-    .btn:hover {transform:translateY(-3px); background:#0d4edb;}
-    .btn-outline {background:#00A76F;}
-    .btn-outline:hover {background:#009260;}
-    form {
-      background:#fff; border:1px solid #eaeaea;
-      border-radius:12px; padding:16px; display:grid; gap:10px;
-    }
-    input, select, textarea {
-      width:100%; padding:10px; border:1px solid #ddd;
-      border-radius:8px; font-family:inherit; transition:border-color .3s;
-    }
-    input:focus, select:focus, textarea:focus {
-      border-color:#00A76F; outline:none;
-    }
+    .btn {display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; background:#155EFB; color:#fff}
+    .btn-outline {background:#00A76F}
+    form {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; display:grid; gap:10px}
+    input, select, textarea {width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit}
     label {display:block; font-weight:600; margin-bottom:6px}
     .routes ul {margin:0; padding:0 18px}
     .muted {color:#555}
     .row {display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));}
     small.hint {color:#666}
-
-    /* Animation */
-    @keyframes fadeUp {
-      from {opacity:0; transform:translateY(30px);}
-      to {opacity:1; transform:translateY(0);}
-    }
   </style>
 </head>
 <body>
@@ -121,12 +81,16 @@
           <input type="text" name="full_name" placeholder="الاسم الكامل" required>
         </div>
         <div>
-          <label>رقم الجوال</label>
-          <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
+          <label>البريد الإلكتروني</label>
+          <input type="email" name="email" placeholder="you@example.com" required>
         </div>
       </div>
 
       <div class="row">
+        <div>
+          <label>رقم الجوال</label>
+          <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
+        </div>
         <div>
           <label>نوع الخدمة</label>
           <select name="service_type" required>
@@ -136,6 +100,9 @@
             <option>مندوب داخل المدينة</option>
           </select>
         </div>
+      </div>
+
+      <div class="row">
         <div>
           <label>من مدينة</label>
           <select name="from_city" required>
@@ -147,9 +114,6 @@
             <option>الأحساء</option>
           </select>
         </div>
-      </div>
-
-      <div class="row">
         <div>
           <label>إلى مدينة</label>
           <select name="to_city" required>
@@ -164,11 +128,122 @@
       </div>
 
       <div>
+        <label>طريقة التسليم</label>
+        <div>
+          <label><input type="radio" name="pickup_option" value="from_warehouse" checked> تسليم للمستودع</label>
+          <label><input type="radio" name="pickup_option" value="pickup_from_location"> استلام من موقعي (مندوب داخل المدينة)</label>
+        </div>
+        <input type="hidden" name="tag" id="pickupTag" value="">
+      </div>
+
+      <div id="pickupFields" style="display:none">
+        <div class="row">
+          <div>
+            <label>مدينة الاستلام</label>
+            <select name="pickup_city">
+              <option value="">اختر</option>
+              <option>الرياض</option>
+              <option>جدة</option>
+              <option>الدمام</option>
+              <option>الأحساء</option>
+            </select>
+          </div>
+          <div>
+            <label>العنوان التفصيلي</label>
+            <input type="text" name="pickup_address" placeholder="الحي، الشارع، رقم المبنى">
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>التاريخ المفضل</label>
+            <input type="date" name="pickup_date">
+          </div>
+          <div>
+            <label>الوقت المفضل</label>
+            <input type="time" name="pickup_time">
+          </div>
+        </div>
+        <div>
+          <label>تعليمات خاصة (اختياري)</label>
+          <textarea name="pickup_notes" placeholder="مثال: تواصل قبل الوصول"></textarea>
+        </div>
+        <small class="hint">خدمة الاستلام متاحة في: الرياض، جدة، الدمام، الأحساء. أوقات الخدمة 10:00–20:00.</small>
+      </div>
+
+      <div>
         <label>وصف الشحنة</label>
         <textarea name="shipment_desc" placeholder="الوزن التقريبي، الأبعاد، أي تفاصيل مهمة" rows="3" required></textarea>
       </div>
 
       <button class="btn" type="submit">إرسال الطلب</button>
+    </form>
+  </section>
+
+  <section id="join" class="card">
+    <h2>انضم كشريك نقل</h2>
+    <p class="muted">اختر نوع الانضمام: سائق/مورّد بين المدن، أو مندوب داخل المدينة.</p>
+    <form action="https://formspree.io/f/mzzjjjqd" method="POST">
+      <input type="hidden" name="_subject" value="Partner Application (AR)">
+      <input type="hidden" name="_redirect" value="/thanks.html">
+      <input type="text" name="_gotcha" style="display:none">
+      <input type="hidden" name="role" id="roleHidden" value="carrier_driver">
+
+      <div class="row">
+        <div>
+          <label>نوع الانضمام</label>
+          <select id="roleSelect" required>
+            <option value="carrier_driver">سائق/مورّد بين المدن</option>
+            <option value="city_agent">مندوب داخل المدينة</option>
+          </select>
+        </div>
+        <div>
+          <label>الاسم الكامل</label>
+          <input type="text" name="full_name" placeholder="الاسم الكامل" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>المدينة</label>
+          <select name="city" required>
+            <option value="">اختر</option>
+            <option>الرياض</option>
+            <option>جدة</option>
+            <option>الدمام</option>
+            <option>الأحساء</option>
+            <option>خميس مشيط</option>
+          </select>
+        </div>
+        <div>
+          <label>نوع المركبة</label>
+          <select name="vehicle" required>
+            <option value="">اختر</option>
+            <option>دراجة</option>
+            <option>سيدان</option>
+            <option>فان</option>
+            <option>شاحنة صغيرة</option>
+            <option>شاحنة</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>التوفّر</label>
+          <input type="text" name="availability" placeholder="مثال: 10ص–8م" required>
+        </div>
+        <div>
+          <label>الجوال/واتساب</label>
+          <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
+        </div>
+      </div>
+
+      <div>
+        <label>خبرة سابقة (اختياري)</label>
+        <textarea name="experience" placeholder="الشركات/السنوات/المناطق"></textarea>
+      </div>
+
+      <button class="btn" type="submit">إرسال</button>
     </form>
   </section>
 </main>
@@ -179,8 +254,31 @@
 </footer>
 
 <script>
+  // WhatsApp number (موحّد)
   const WHATSAPP_NUM = '966590000819';
   document.querySelectorAll('a[data-wa]').forEach(a => a.href = `https://wa.me/${WHATSAPP_NUM}`);
+
+  // City Pickup toggle
+  const radios = document.querySelectorAll('input[name="pickup_option"]');
+  const pickupFields = document.getElementById('pickupFields');
+  const pickupTag = document.getElementById('pickupTag');
+  function togglePickup() {
+    const v = document.querySelector('input[name="pickup_option"]:checked')?.value;
+    const isPickup = v === 'pickup_from_location';
+    pickupFields.style.display = isPickup ? 'block' : 'none';
+    pickupTag.value = isPickup ? 'CITY_PICKUP' : '';
+    const city = pickupFields.querySelector('[name="pickup_city"]');
+    const addr = pickupFields.querySelector('[name="pickup_address"]');
+    if (city) city.required = isPickup;
+    if (addr) addr.required = isPickup;
+  }
+  radios.forEach(r => r.addEventListener('change', togglePickup));
+  togglePickup();
+
+  // Role sync for partners form
+  const roleSelect = document.getElementById('roleSelect');
+  const roleHidden = document.getElementById('roleHidden');
+  roleSelect?.addEventListener('change', () => roleHidden.value = roleSelect.value);
 </script>
 </body>
 </html>
