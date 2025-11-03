@@ -8,19 +8,29 @@
   <link rel="canonical" href="https://www.shahnex.com/">
   <meta name="theme-color" content="#00A76F">
   <style>
+    :root {
+      --nav-height: 64px; /* عدّل الارتفاع حسب رغبتك: 56px/64px/72px */
+    }
+
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
     body {
       font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial;
       background:#F5F7FA; color:#1E1E24; margin:0; line-height:1.6;
-      animation: fadeIn 1s ease both;
+      animation: fadeIn 0.6s ease both;
     }
+
     header, main, footer {max-width:1024px; margin:auto; padding:16px;}
-    .hero {
+    header.hero {
       display:grid; gap:12px; padding:24px; background:#fff;
       border-radius:12px; border:1px solid #eaeaea;
-      animation: slideUp 1.2s ease both;
+      animation: slideUp 0.8s ease both;
+      margin-top: calc(var(--nav-height) + 8px); /* تعويض الهيدر الثابت */
     }
     .services {display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));}
-    .card {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; animation: fadeInUp 1.2s ease both;}
+    .card {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; animation: fadeInUp 0.8s ease both;}
     .card h3 {margin-top:0}
     .btn {display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; background:#155EFB; color:#fff; transition:all .3s;}
     .btn:hover {background:#003ee8;}
@@ -33,77 +43,73 @@
     .row {display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));}
     small.hint {color:#666}
 
- /* ========== الهيدر والشعار (إصدار ثابت) ========== */
-nav {
-  position: -webkit-sticky; /* دعم Safari */
-  position: sticky;
-  top: 0;
-  inset-inline-start: 0;
-  inset-inline-end: 0;
-  z-index: 1000;
-  background: #fff;
-  border-bottom: 1px solid #eaeaea;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
+    /* ========== الهيدر الثابت والشعار (إصدار ثابت ومضمون) ========== */
+    nav {
+      position: fixed;
+      top: 0;
+      inset-inline: 0;    /* يمين ويسار */
+      z-index: 1000;
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      /* لا تستخدم أي animation/transform هنا */
+    }
+    nav .nav-inner {
+      max-width: 1024px;
+      margin: auto;
+      padding: 8px 16px;
+      min-height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      direction: rtl; /* تأكيد RTL */
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 0; /* يمنع تمدد الارتفاع بسبب SVG */
+    }
+    .logo a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo svg {
+      display: block;
+      height: 40px;  /* يمكنك تعديلها 36–44 */
+      width: auto;
+      max-width: 100%;
+    }
+    .nav-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      line-height: 1;
+    }
+    .nav-links a {
+      color: #155EFB;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .3s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: #003ee8; }
 
-nav .nav-inner {
-  max-width: 1024px;
-  margin: auto;
-  padding: 8px 16px;
-  min-height: 56px;              /* ارتفاع شريط متّسق */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  line-height: 1;                /* يمنع تمدد الارتفاع */
-}
-
-.logo a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo svg {
-  display: block;
-  height: 40px;                  /* كان 48px — تقليل الارتفاع لتجنّب تمدد الشريط */
-  width: auto;
-}
-
-.nav-links {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.nav-links a {
-  color: #155EFB;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color .3s;
-}
-
-.nav-links a:hover { color: #003ee8; }
-
+    /* حركات خفيفة للمحتوى (ليست على nav) */
     @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
-    @keyframes fadeInSlide {from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);}}
-    @keyframes slideUp {from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}}
-    @keyframes fadeInUp {from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+    @keyframes slideUp {from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);}}
+    @keyframes fadeInUp {from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
   </style>
 </head>
 
 <body>
-  <nav>
+  <nav aria-label="رأس الموقع">
     <div class="nav-inner">
       <div class="logo">
         <a href="/" aria-label="شحن إكس — الصفحة الرئيسية">
-          <!-- SVG Logo -->
+          <!-- شعار SVG -->
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="180" height="48" role="img" aria-label="شحن إكس | SHAHN X">
             <defs>
               <linearGradient id="gradX" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -183,7 +189,7 @@ nav .nav-inner {
             <label>الاسم الكامل</label>
             <input type="text" name="full_name" placeholder="الاسم الكامل" required>
           </div>
-          <!-- لا يوجد بريد إلكتروني حسب طلبك -->
+          <!-- تمت إزالة البريد الإلكتروني حسب طلبك -->
           <div>
             <label>رقم الجوال</label>
             <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
@@ -386,10 +392,11 @@ nav .nav-inner {
   </footer>
 
   <script>
+    // توحيد رقم واتساب
     const WHATSAPP_NUM = '966590000819';
     document.querySelectorAll('a[data-wa]').forEach(a => a.href = `https://wa.me/${WHATSAPP_NUM}`);
 
-    // ظل الهيدر عند التمرير
+    // ظل الهيدر عند التمرير (اختياري)
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
       if (window.scrollY > 20) { nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'; }
@@ -462,4 +469,3 @@ nav .nav-inner {
   </script>
 </body>
 </html>
-
