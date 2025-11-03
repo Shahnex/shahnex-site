@@ -45,7 +45,9 @@
       max-width:1024px; margin:auto; padding:10px 16px;
       display:flex; align-items:center; justify-content:space-between;
     }
-    .logo {display:flex; align-items:center; gap:8px; font-weight:800; color:#0B2D45; font-size:20px;}
+    .logo {display:flex; align-items:center; gap:8px;}
+    .logo a {display:inline-flex; align-items:center; text-decoration:none;}
+    .logo svg { height:48px; width:auto; display:block; }
     .nav-links a {
       margin-inline:8px; color:#155EFB; font-weight:600;
       text-decoration:none; transition:color .3s;
@@ -63,8 +65,27 @@
   <nav>
     <div class="nav-inner">
       <div class="logo">
-        <!-- تم حذف SVG واستبداله بنص شعار بسيط -->
-        شحن إكس
+        <a href="/" aria-label="شحن إكس — الصفحة الرئيسية">
+          <!-- SVG Logo -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="180" height="48" role="img" aria-label="شحن إكس | SHAHN X">
+            <defs>
+              <linearGradient id="gradX" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0B2D45"/>
+                <stop offset="100%" stop-color="#FF8A00"/>
+              </linearGradient>
+              <style>
+                .ar {font-family:'Cairo',sans-serif;font-weight:700;fill:#0B2D45;font-size:18px}
+                .en {font-family:'Verdana',sans-serif;font-weight:700;fill:#0B2D45;font-size:9px}
+              </style>
+            </defs>
+            <g transform="translate(5,5)">
+              <path d="M10 45 C 20 20, 50 10, 80 25" fill="none" stroke="url(#gradX)" stroke-width="6" stroke-linecap="round"/>
+              <path d="M90 15 L105 45 L120 15 Z" fill="url(#gradX)" />
+            </g>
+            <text class="ar" x="210" y="25" text-anchor="end" direction="rtl">شحن إكس</text>
+            <text class="en" x="210" y="40" text-anchor="end">SHAHN X</text>
+          </svg>
+        </a>
       </div>
       <div class="nav-links">
         <a href="#quote">عرض سعر</a>
