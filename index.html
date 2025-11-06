@@ -3,38 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>شحن إكس | شحن ذكي بأسعار تنافسية</title>
-  <meta name="description" content="شحن إكس — شحن ذكي بأسعار تنافسية بين المدن، مع سائق خاص، وخدمة مندوب داخل المدينة.">
+  <title>ROVA روڤا | الطريق الذكي</title>
+  <meta name="description" content="ROVA روڤا — الطريق الذكي بين المدن، مع سائق خاص، وخدمة مندوب داخل المدينة.">
   <link rel="canonical" href="https://www.shahnex.com/">
-  <meta name="theme-color" content="#00A76F">
+  <meta name="theme-color" content="#D4B36E">
   <style>
     :root {
-      --nav-height: 64px; /* عدّل الارتفاع حسب رغبتك: 56px/64px/72px */
+      --nav-height: 64px;
     }
-
-    *,
-    *::before,
-    *::after { box-sizing: border-box; }
-
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial;
       background:#F5F7FA; color:#1E1E24; margin:0; line-height:1.6;
       animation: fadeIn 0.6s ease both;
     }
-
     header, main, footer {max-width:1024px; margin:auto; padding:16px;}
     header.hero {
       display:grid; gap:12px; padding:24px; background:#fff;
       border-radius:12px; border:1px solid #eaeaea;
       animation: slideUp 0.8s ease both;
-      margin-top: calc(var(--nav-height) + 8px); /* تعويض الهيدر الثابت */
+      margin-top: calc(var(--nav-height) + 8px);
     }
     .services {display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));}
     .card {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; animation: fadeInUp 0.8s ease both;}
     .card h3 {margin-top:0}
     .btn {display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; background:#155EFB; color:#fff; transition:all .3s;}
     .btn:hover {background:#003ee8;}
-    .btn-outline {background:#00A76F;}
+    .btn-outline {background:#D4B36E; color:#111;}
     form {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; display:grid; gap:10px}
     input, select, textarea {width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit}
     label {display:block; font-weight:600; margin-bottom:6px}
@@ -47,12 +42,11 @@
     nav {
       position: fixed;
       top: 0;
-      inset-inline: 0;    /* يمين ويسار */
+      inset-inline: 0;
       z-index: 1000;
       background: #fff;
       border-bottom: 1px solid #eaeaea;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      /* لا تستخدم أي animation/transform هنا */
     }
     nav .nav-inner {
       max-width: 1024px;
@@ -63,13 +57,13 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      direction: rtl; /* تأكيد RTL */
+      direction: rtl;
     }
     .logo {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      line-height: 0; /* يمنع تمدد الارتفاع بسبب SVG */
+      line-height: 0;
     }
     .logo a {
       display: inline-flex;
@@ -78,7 +72,7 @@
     }
     .logo svg {
       display: block;
-      height: 40px;  /* يمكنك تعديلها 36–44 */
+      height: 40px;
       width: auto;
       max-width: 100%;
     }
@@ -97,7 +91,6 @@
     }
     .nav-links a:hover { color: #003ee8; }
 
-    /* حركات خفيفة للمحتوى (ليست على nav) */
     @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
     @keyframes slideUp {from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);}}
     @keyframes fadeInUp {from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
@@ -108,25 +101,58 @@
   <nav aria-label="رأس الموقع">
     <div class="nav-inner">
       <div class="logo">
-        <a href="/" aria-label="شحن إكس — الصفحة الرئيسية">
-          <!-- شعار SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="180" height="48" role="img" aria-label="شحن إكس | SHAHN X">
+        <a href="/" aria-label="ROVA روڤا — الصفحة الرئيسية">
+          <!-- شعار مُحوّل إلى مسارات (outlines) — Champagne gold + matte dark gray -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" width="220" height="48" role="img" aria-label="ROVA روڤا — الشعار">
+            <title>ROVA روڤا — الشعار</title>
             <defs>
-              <linearGradient id="gradX" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#0B2D45"/>
-                <stop offset="100%" stop-color="#FF8A00"/>
+              <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#F6E3C7"/>
+                <stop offset="0.5" stop-color="#EDD7A8"/>
+                <stop offset="1" stop-color="#D4B36E"/>
               </linearGradient>
-              <style>
-                .ar {font-family:'Cairo',sans-serif;font-weight:700;fill:#0B2D45;font-size:18px}
-                .en {font-family:'Verdana',sans-serif;font-weight:700;fill:#0B2D45;font-size:9px}
-              </style>
+              <linearGradient id="sheenG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
             </defs>
-            <g transform="translate(5,5)">
-              <path d="M10 45 C 20 20, 50 10, 80 25" fill="none" stroke="url(#gradX)" stroke-width="6" stroke-linecap="round"/>
-              <path d="M90 15 L105 45 L120 15 Z" fill="url(#gradX)" />
+
+            <!-- Abstract motion mark (gold ribbon) -->
+            <g transform="translate(8,8)" fill="none" stroke="none" aria-hidden="true">
+              <path d="M16 64 C34 26, 86 18, 128 44 L116 60 C86 38, 46 40, 20 66 Z" fill="url(#goldG)"/>
+              <path d="M52 56 C74 46, 98 48, 122 62" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0 22" opacity="0.9" fill="none"/>
+              <path d="M16 64 C34 26, 86 18, 128 44 L116 60 C86 38, 46 40, 20 66 Z" fill="url(#sheenG)" opacity="0.28"/>
             </g>
-            <text class="ar" x="210" y="25" text-anchor="end" direction="rtl">شحن إكس</text>
-            <text class="en" x="210" y="40" text-anchor="end">SHAHN X</text>
+
+            <!-- Wordmark: R O V A (paths outlines) -->
+            <!-- NOTE: these paths are simplified, converted outlines for display reliability -->
+            <g transform="translate(160,12)" fill="#1E1E24" aria-hidden="true">
+              <!-- R -->
+              <path d="M6 72 L6 12 L34 12 C50 12 62 20 62 36 C62 50 52 58 36 60 L62 72 L54 80 L24 64 L6 72 Z"/>
+              <!-- O -->
+              <path d="M84 12 C108 12 124 30 124 48 C124 66 108 84 84 84 C60 84 44 66 44 48 C44 30 60 12 84 12 Z M84 28 C72 28 64 36 64 48 C64 60 72 68 84 68 C96 68 104 60 104 48 C104 36 96 28 84 28 Z"/>
+              <!-- V with integrated road cut (negative path simulated by overlay) -->
+              <path d="M140 12 L168 72 L154 72 L136 30 L118 72 L104 72 L132 12 Z"/>
+              <!-- small gold inset in V (as separate shape) -->
+              <path d="M122 40 C132 30, 150 30, 160 40 L150 54 C142 46, 132 46, 122 54 Z" fill="url(#goldG)"/>
+              <path d="M122 40 C132 30, 150 30, 160 40 L150 54 C142 46, 132 46, 122 54 Z" fill="url(#sheenG)" opacity="0.28"/>
+              <!-- A -->
+              <path d="M186 72 L208 12 L230 12 L252 72 L236 72 L230 52 L196 52 L190 72 L186 72 Z M204 28 L220 28 L212 48 L204 28 Z"/>
+            </g>
+
+            <!-- Arabic wordmark converted to outlines (روڤا) placed to the left for RTL balance -->
+            <!-- These paths are vector outlines representing 'روڤا' — colored matte dark gray -->
+            <g transform="translate(24,18)" fill="#1E1E24" aria-hidden="true">
+              <!-- ر -->
+              <path d="M0 28 C12 6, 48 2, 72 18 L64 30 C44 16, 16 18, 4 36 Z"/>
+              <!-- و -->
+              <path d="M86 20 C102 18, 116 32, 118 48 C120 66, 104 78, 88 76 C74 74, 64 60, 62 46 C60 34, 70 22, 86 20 Z"/>
+              <!-- ڤ (fa-like with dot) -->
+              <path d="M130 18 L150 18 C160 18, 172 28, 174 40 C176 54, 166 68, 150 72 L138 72 L132 54 L148 48 C156 46, 162 40, 162 34 C162 28, 156 22, 148 22 L130 22 Z"/>
+              <circle cx="156" cy="10" r="3.5" fill="url(#goldG)"/>
+              <!-- ا -->
+              <path d="M190 12 L198 12 L198 68 L192 68 L190 32 Z"/>
+            </g>
           </svg>
         </a>
       </div>
@@ -139,7 +165,7 @@
   </nav>
 
   <header class="hero">
-    <h1>شحن إكس — شحن ذكي بأسعار تنافسية</h1>
+    <h1>ROVA روڤا — الطريق الذكي</h1>
     <p class="muted">3 خيارات: شركة الشحن، السائق الخاص، ومندوب داخل المدينة للاستلام أو التسليم.</p>
     <div>
       <a class="btn" href="#quote">اطلب عرض سعر</a>
@@ -148,7 +174,6 @@
   </header>
 
   <main>
-    <!-- المسارات -->
     <section class="card routes">
       <h2>المسارات</h2>
       <ul>
@@ -159,7 +184,6 @@
       </ul>
     </section>
 
-    <!-- الخدمات -->
     <section class="services">
       <div class="card">
         <h3>شركة الشحن</h3>
@@ -176,7 +200,6 @@
       </div>
     </section>
 
-    <!-- طلب عرض سعر -->
     <section id="quote" class="card">
       <h2>طلب عرض سعر</h2>
       <form action="https://formspree.io/f/mjkaaazd" method="POST" accept-charset="UTF-8">
@@ -189,7 +212,6 @@
             <label>الاسم الكامل</label>
             <input type="text" name="full_name" placeholder="الاسم الكامل" required>
           </div>
-          <!-- تمت إزالة البريد الإلكتروني حسب طلبك -->
           <div>
             <label>رقم الجوال</label>
             <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
@@ -222,7 +244,6 @@
           </div>
         </div>
 
-        <!-- طريقة التسليم العامة -->
         <div>
           <label>طريقة التسليم</label>
           <div>
@@ -232,7 +253,6 @@
           <input type="hidden" name="tag" id="pickupTag" value="">
         </div>
 
-        <!-- نوع خدمة المندوب داخل المدينة -->
         <div id="cityAgentModeWrap" style="display:none; margin-top:8px">
           <label>خدمة المندوب داخل المدينة</label>
           <div>
@@ -241,7 +261,6 @@
           </div>
         </div>
 
-        <!-- First-mile fields -->
         <div id="firstMileFields" style="display:none; margin-top:8px">
           <div class="row">
             <div>
@@ -273,7 +292,6 @@
           <small class="hint">خدمة الاستلام متاحة في: الرياض، جدة، الدمام، الأحساء، خميس مشيط. 10:00–20:00.</small>
         </div>
 
-        <!-- Last-mile fields -->
         <div id="lastMileFields" style="display:none; margin-top:8px">
           <div class="row">
             <div>
@@ -324,7 +342,6 @@
       </form>
     </section>
 
-    <!-- انضم كشريك نقل -->
     <section id="join" class="card">
       <h2>انضم كشريك نقل</h2>
       <p class="muted">سائق/مورّد بين المدن أو مندوب داخل المدينة.</p>
@@ -387,23 +404,20 @@
   </main>
 
   <footer class="card">
-    <p>© شحن إكس | SHAHN X</p>
+    <p>© ROVA روڤا</p>
     <p><a data-wa target="_blank" rel="noopener">تواصل واتساب</a></p>
   </footer>
 
   <script>
-    // توحيد رقم واتساب
     const WHATSAPP_NUM = '966590000819';
     document.querySelectorAll('a[data-wa]').forEach(a => a.href = `https://wa.me/${WHATSAPP_NUM}`);
 
-    // ظل الهيدر عند التمرير (اختياري)
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
       if (window.scrollY > 20) { nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'; }
       else { nav.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)'; }
     });
 
-    // تحكم بخدمة المندوب: first-mile / last-mile
     const pickupRadios = document.querySelectorAll('input[name="pickup_option"]');
     const cityAgentWrap = document.getElementById('cityAgentModeWrap');
     const firstMile = document.getElementById('firstMileFields');
@@ -459,7 +473,6 @@
     });
     toggleAll();
 
-    // مزامنة الدور hidden مع اختيار نوع الانضمام
     const roleSelect = document.getElementById('roleSelect');
     const roleHidden = document.getElementById('roleHidden');
     if (roleSelect && roleHidden) {
