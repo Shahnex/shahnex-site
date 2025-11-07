@@ -3,482 +3,574 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ROVA روڤا | الطريق الذكي</title>
-  <meta name="description" content="ROVA روڤا — الطريق الذكي بين المدن، مع سائق خاص، وخدمة مندوب داخل المدينة.">
-  <link rel="canonical" href="https://www.shahnex.com/">
-  <meta name="theme-color" content="#D4B36E">
+  <title>ROVA روڤا | حلول ذكية للنقل بين المدن</title>
+  <meta name="description" content="ROVA روڤا — حلول ذكية للنقل بين المدن بخدمة احترافية وموثوقة.">
+  <meta name="theme-color" content="#0B0F16">
+
+  <!-- Favicon: مربع داكن مع R ذهبي -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+  %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E
+  %3Crect width='128' height='128' rx='12' fill='%230B0F16'/%3E
+  %3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E
+  %3Cstop offset='0' stop-color='%23F6E7C7'/%3E
+  %3Cstop offset='0.5' stop-color='%23E6C988'/%3E
+  %3Cstop offset='1' stop-color='%23D4B36E'/%3E
+  %3C/linearGradient%3E%3C/defs%3E
+  %3Cpath d='M36 96L36 32L78 32C94 32 108 44 108 60C108 74 98 84 82 86L108 96L96 104L60 90Z' fill='url(%23g)'/%3E
+  %3C/svg%3E">
+
   <style>
-    :root {
-      --nav-height: 64px;
+    :root{
+      --navy-900:#0B0F16;  /* أسود مزرق عميق */
+      --navy-800:#111622;
+      --gold:#D4B36E;      /* ذهبي مطفي */
+      --gold-200:#E6C988;
+      --gray-100:#F5F7FA;
+      --ink-900:#1E1E24;
+      --radius:14px;
+      --trans:.35s ease;
+      --maxw:1080px;
     }
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background:#F5F7FA; color:#1E1E24; margin:0; line-height:1.6;
-      animation: fadeIn 0.6s ease both;
-    }
-    header, main, footer {max-width:1024px; margin:auto; padding:16px;}
-    header.hero {
-      display:grid; gap:12px; padding:24px; background:#fff;
-      border-radius:12px; border:1px solid #eaeaea;
-      animation: slideUp 0.8s ease both;
-      margin-top: calc(var(--nav-height) + 8px);
-    }
-    .services {display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));}
-    .card {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; animation: fadeInUp 0.8s ease both;}
-    .card h3 {margin-top:0}
-    .btn {display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; background:#155EFB; color:#fff; transition:all .3s;}
-    .btn:hover {background:#003ee8;}
-    .btn-outline {background:#D4B36E; color:#111;}
-    form {background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:16px; display:grid; gap:10px}
-    input, select, textarea {width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit}
-    label {display:block; font-weight:600; margin-bottom:6px}
-    .routes ul {margin:0; padding:0 18px}
-    .muted {color:#555}
-    .row {display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));}
-    small.hint {color:#666}
 
-    /* ========== الهيدر الثابت والشعار (إصدار ثابت ومضمون) ========== */
-    nav {
-      position: fixed;
-      top: 0;
-      inset-inline: 0;
-      z-index: 1000;
-      background: #fff;
-      border-bottom: 1px solid #eaeaea;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; line-height:1.65; -webkit-font-smoothing:antialiased;
+      font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:#EAEFF7; background:var(--navy-900);
+      background-image:
+        radial-gradient(1250px 650px at 50% -10%, rgba(212,179,110,.10), rgba(0,0,0,0)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 20 20'%3E%3Cg fill='none' stroke='%23a68f5a' stroke-opacity='.18' stroke-width='.5'%3E%3Cpath d='M0 10 H20'/%3E%3Cpath d='M10 0 V20'/%3E%3Cpath d='M-5 15 L25 -5'/%3E%3Cpath d='M-5 25 L25 5'/%3E%3C/g%3E%3C/svg%3E");
+      background-size:auto, 360px 360px; background-attachment:fixed;
+      scroll-behavior:smooth; animation:fadeIn 0.8s ease both;
     }
-    nav .nav-inner {
-      max-width: 1024px;
-      margin: auto;
-      padding: 8px 16px;
-      min-height: var(--nav-height);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      direction: rtl;
-    }
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      line-height: 0;
-    }
-    .logo a {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .logo svg {
-      display: block;
-      height: 40px;
-      width: auto;
-      max-width: 100%;
-    }
-    .nav-links {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      line-height: 1;
-    }
-    .nav-links a {
-      color: #155EFB;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color .3s;
-      white-space: nowrap;
-    }
-    .nav-links a:hover { color: #003ee8; }
+    a{color:var(--gold); text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{max-width:var(--maxw); margin:auto; padding-inline:16px}
 
-    @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
-    @keyframes slideUp {from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);}}
-    @keyframes fadeInUp {from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+    /* شريط علوي */
+    nav{
+      position:sticky; top:0; z-index:100;
+      backdrop-filter: saturate(140%) blur(10px);
+      background:linear-gradient(to bottom, rgba(17,22,34,.85), rgba(17,22,34,.55));
+      border-bottom:1px solid rgba(230,201,136,.18);
+    }
+    .nav-in{
+      display:flex; align-items:center; justify-content:space-between;
+      min-height:72px; gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:14px}
+    .chip{
+      display:inline-block; padding:8px 12px; border-radius:999px;
+      background:rgba(212,179,110,.15); color:#f7e9c8;
+      border:1px solid rgba(212,179,110,.25)
+    }
+    .nav-links{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-block; padding:10px 14px; border-radius:10px; font-weight:700;
+      background:var(--gold); color:#1a1a1a; transition:transform var(--trans), filter var(--trans);
+    }
+    .btn:hover{transform:translateY(-1px); filter:saturate(110%)}
+
+    /* أبطال وبطاقات */
+    .hero{padding:24px 0 28px}
+    .hero .box{
+      background:linear-gradient(180deg, rgba(24,32,50,.65), rgba(17,22,34,.65));
+      border:1px solid rgba(230,201,136,.18);
+      border-radius:var(--radius);
+      padding:28px; display:grid; gap:16px; align-items:center;
+      animation:fadeInUp .6s ease both .05s;
+    }
+    h1{margin:0; font-size:clamp(22px,4vw,34px); letter-spacing:.3px}
+    .muted{color:#cbd3e4}
+    .grid{display:grid; gap:14px}
+    .services{grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin:20px 0}
+    .routes{grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin:20px 0}
+    .card{
+      background:linear-gradient(180deg, rgba(24,32,50,.55), rgba(17,22,34,.55));
+      border:1px solid rgba(230,201,136,.16);
+      border-radius:var(--radius); padding:16px;
+      animation:fadeInUp .6s ease both;
+    }
+    .card h3{margin-top:0; color:#F2E8D2}
+    .card p{margin-bottom:0; color:#D4D9E6}
+    .card ul{margin:0; padding:0 18px; color:#D4D9E6}
+
+    /* نماذج */
+    form{display:grid; gap:12px}
+    .row{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    input,select,textarea{
+      width:100%; padding:12px; border-radius:10px; border:1px solid rgba(230,201,136,.2);
+      background:#0f1420; color:#EAEFF7; font-family:inherit;
+      outline:none; transition:border var(--trans), background var(--trans);
+    }
+    input::placeholder, textarea::placeholder{color:#91A0B8}
+    input:focus, select:focus, textarea:focus{border-color:var(--gold)}
+    .hint{color:#9FB0C8; font-size:.9rem}
+
+    /* الشعار (ذهبي للوضع الداكن / فاتح للوضع الفاتح) */
+    .logo{display:block; height:52px}
+    .logo--gold{display:block}
+    .logo--light{display:none}
+    body.light .logo--gold{display:none}
+    body.light .logo--light{display:block}
+
+    /* الفوتر */
+    footer{
+      margin:32px 0 24px; padding:18px 0 8px;
+      border-top:1px solid rgba(230,201,136,.18);
+      color:#cbd3e4; text-align:center;
+    }
+    .foot-logos{display:flex; gap:12px; justify-content:center; align-items:center; margin-bottom:12px}
+    .foot-logos .logo{height:36px}
+
+    /* أزرار أعلى الصفحة */
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .top-actions{display:flex; gap:10px; align-items:center}
+    .theme-toggle, .lang-toggle{
+      width:44px; height:44px; border-radius:50%;
+      background:rgba(212,179,110,.12); color:#F6EBD1; border:1px solid rgba(212,179,110,.35);
+      display:grid; place-items:center; cursor:pointer; backdrop-filter:blur(6px);
+      transition:background var(--trans), transform var(--trans);
+    }
+    .theme-toggle:hover, .lang-toggle:hover{background:rgba(212,179,110,.22); transform:translateY(-1px)}
+
+    /* تعدد اللغات */
+    .lang-ar{display:block}
+    .lang-en{display:none}
+    html[data-lang="en"] .lang-ar{display:none}
+    html[data-lang="en"] .lang-en{display:block}
+    html[data-lang="en"] body{direction:ltr}
+
+    /* وضع فاتح */
+    body.light{
+      color:var(--ink-900); background:var(--gray-100);
+      background-image:none;
+    }
+    body.light .hero .box,
+    body.light .card{background:#fff; border-color:#E6EAF0; color:var(--ink-900)}
+    body.light .muted{color:#5d6572}
+    body.light nav{background:rgba(255,255,255,.85); border-bottom:1px solid #E8ECF3}
+    body.light .chip{background:#F5F2E7; color:#6C5930; border-color:#E7D7AE}
+    body.light input, body.light select, body.light textarea{background:#fff; color:var(--ink-900); border-color:#E6EAF0}
+
+    /* حركات */
+    @keyframes fadeIn{from{opacity:0} to{opacity:1}}
+    @keyframes fadeInUp{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
   </style>
 </head>
 
 <body>
-  <nav aria-label="رأس الموقع">
-    <div class="nav-inner">
-      <div class="logo">
-        <a href="/" aria-label="ROVA روڤا — الصفحة الرئيسية">
-          <!-- شعار مُحوّل إلى مسارات (outlines) — Champagne gold + matte dark gray -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" width="220" height="48" role="img" aria-label="ROVA روڤا — الشعار">
-            <title>ROVA روڤا — الشعار</title>
-            <defs>
-              <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#F6E3C7"/>
-                <stop offset="0.5" stop-color="#EDD7A8"/>
-                <stop offset="1" stop-color="#D4B36E"/>
-              </linearGradient>
-              <linearGradient id="sheenG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
-                <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
+  <!-- أزرار أعلى الصفحة: تبديل الثيم + اللغة -->
+  <div class="wrap" style="position:sticky; top:12px; z-index:120; display:flex; justify-content:flex-end; gap:10px; padding-top:10px;">
+    <button class="lang-toggle" id="langToggle" title="AR / EN">AR</button>
+    <button class="theme-toggle" id="themeToggle" title="تبديل الثيم (فاتح/داكن)">🌙</button>
+  </div>
 
-            <!-- Abstract motion mark (gold ribbon) -->
-            <g transform="translate(8,8)" fill="none" stroke="none" aria-hidden="true">
-              <path d="M16 64 C34 26, 86 18, 128 44 L116 60 C86 38, 46 40, 20 66 Z" fill="url(#goldG)"/>
-              <path d="M52 56 C74 46, 98 48, 122 62" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0 22" opacity="0.9" fill="none"/>
-              <path d="M16 64 C34 26, 86 18, 128 44 L116 60 C86 38, 46 40, 20 66 Z" fill="url(#sheenG)" opacity="0.28"/>
-            </g>
+  <!-- شريط علوي -->
+  <nav>
+    <div class="wrap nav-in">
+      <div class="brand">
+        <!-- شعار ROVA | نسخة ذهبية للوضع الداكن -->
+        <svg class="logo logo--gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" aria-label="ROVA روڤا — الشعار الذهبي">
+          <defs>
+            <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#F6E7C7"/><stop offset="0.55" stop-color="#E6C988"/><stop offset="1" stop-color="#D4B36E"/>
+            </linearGradient>
+          </defs>
+          <!-- R ذهبي -->
+          <path d="M18 70 L18 20 L53 20 C70 20 82 30 82 45 C82 58 73 66 56 67 L82 70 L72 80 L40 68 Z" fill="url(#gGold)"/>
+          <!-- ROVA + روڤا -->
+          <text x="104" y="54" font-size="30" font-family="Poppins, system-ui" font-weight="800" fill="url(#gGold)">ROVA</text>
+          <text x="104" y="76" font-size="16" font-family="Cairo, system-ui" font-weight="700" fill="#E6C988">روڤا</text>
+        </svg>
+        <!-- شعار ROVA | نسخة فاتحة للوضع الفاتح -->
+        <svg class="logo logo--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" aria-label="ROVA روڤا — الشعار الفاتح">
+          <path d="M18 70 L18 20 L53 20 C70 20 82 30 82 45 C82 58 73 66 56 67 L82 70 L72 80 L40 68 Z" fill="#1E1E24"/>
+          <text x="104" y="54" font-size="30" font-family="Poppins, system-ui" font-weight="900" fill="#111522">ROVA</text>
+          <text x="104" y="76" font-size="16" font-family="Cairo, system-ui" font-weight="700" fill="#6C5930">روڤا</text>
+        </svg>
 
-            <!-- Wordmark: R O V A (paths outlines) -->
-            <!-- NOTE: these paths are simplified, converted outlines for display reliability -->
-            <g transform="translate(160,12)" fill="#1E1E24" aria-hidden="true">
-              <!-- R -->
-              <path d="M6 72 L6 12 L34 12 C50 12 62 20 62 36 C62 50 52 58 36 60 L62 72 L54 80 L24 64 L6 72 Z"/>
-              <!-- O -->
-              <path d="M84 12 C108 12 124 30 124 48 C124 66 108 84 84 84 C60 84 44 66 44 48 C44 30 60 12 84 12 Z M84 28 C72 28 64 36 64 48 C64 60 72 68 84 68 C96 68 104 60 104 48 C104 36 96 28 84 28 Z"/>
-              <!-- V with integrated road cut (negative path simulated by overlay) -->
-              <path d="M140 12 L168 72 L154 72 L136 30 L118 72 L104 72 L132 12 Z"/>
-              <!-- small gold inset in V (as separate shape) -->
-              <path d="M122 40 C132 30, 150 30, 160 40 L150 54 C142 46, 132 46, 122 54 Z" fill="url(#goldG)"/>
-              <path d="M122 40 C132 30, 150 30, 160 40 L150 54 C142 46, 132 46, 122 54 Z" fill="url(#sheenG)" opacity="0.28"/>
-              <!-- A -->
-              <path d="M186 72 L208 12 L230 12 L252 72 L236 72 L230 52 L196 52 L190 72 L186 72 Z M204 28 L220 28 L212 48 L204 28 Z"/>
-            </g>
-
-            <!-- Arabic wordmark converted to outlines (روڤا) placed to the left for RTL balance -->
-            <!-- These paths are vector outlines representing 'روڤا' — colored matte dark gray -->
-            <g transform="translate(24,18)" fill="#1E1E24" aria-hidden="true">
-              <!-- ر -->
-              <path d="M0 28 C12 6, 48 2, 72 18 L64 30 C44 16, 16 18, 4 36 Z"/>
-              <!-- و -->
-              <path d="M86 20 C102 18, 116 32, 118 48 C120 66, 104 78, 88 76 C74 74, 64 60, 62 46 C60 34, 70 22, 86 20 Z"/>
-              <!-- ڤ (fa-like with dot) -->
-              <path d="M130 18 L150 18 C160 18, 172 28, 174 40 C176 54, 166 68, 150 72 L138 72 L132 54 L148 48 C156 46, 162 40, 162 34 C162 28, 156 22, 148 22 L130 22 Z"/>
-              <circle cx="156" cy="10" r="3.5" fill="url(#goldG)"/>
-              <!-- ا -->
-              <path d="M190 12 L198 12 L198 68 L192 68 L190 32 Z"/>
-            </g>
-          </svg>
-        </a>
+        <span class="chip lang-ar">حلول ذكية للنقل بين المدن</span>
+        <span class="chip lang-en">Smart Solutions for Intercity Transport</span>
       </div>
+
       <div class="nav-links">
-        <a href="#quote">عرض سعر</a>
-        <a href="#join">انضم إلينا</a>
-        <a data-wa target="_blank" rel="noopener">واتساب</a>
+        <a href="#services" class="lang-ar">الخدمات</a>
+        <a href="#routes" class="lang-ar">المسارات</a>
+        <a href="#quote" class="lang-ar">عرض سعر</a>
+        <a href="#join" class="lang-ar">انضم كشريك</a>
+
+        <a href="#services" class="lang-en">Services</a>
+        <a href="#routes" class="lang-en">Routes</a>
+        <a href="#quote" class="lang-en">Get a Quote</a>
+        <a href="#join" class="lang-en">Partner with Us</a>
+
+        <a data-wa href="#" target="_blank" rel="noopener" class="btn lang-ar">واتساب</a>
+        <a data-wa href="#" target="_blank" rel="noopener" class="btn lang-en">WhatsApp</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero">
-    <h1>ROVA روڤا — الطريق الذكي</h1>
-    <p class="muted">3 خيارات: شركة الشحن، السائق الخاص، ومندوب داخل المدينة للاستلام أو التسليم.</p>
-    <div>
-      <a class="btn" href="#quote">اطلب عرض سعر</a>
-      <a class="btn btn-outline" data-wa target="_blank" rel="noopener">تواصل عبر واتساب</a>
+  <!-- البطل -->
+  <section class="wrap hero" id="home">
+    <div class="box">
+      <h1 class="lang-ar">ROVA روڤا — حلول ذكية للنقل بين المدن</h1>
+      <h1 class="lang-en">ROVA — Smart Intercity Transport Solutions</h1>
+      <p class="muted lang-ar">نمزج بين الاحتراف المؤسسي والذكاء العصري: شركة شحن، سائق خاص، ومندوب داخل المدينة.</p>
+      <p class="muted lang-en">Blending corporate-grade reliability with smart, modern logistics: carrier partners, private drivers, and in-city agents.</p>
+      <div class="actions">
+        <a class="btn lang-ar" href="#quote">اطلب عرض سعر</a>
+        <a class="btn lang-en" href="#quote">Request a Quote</a>
+        <a class="btn" style="background:#2b5cff; color:#fff" href="#services">
+          <span class="lang-ar">تعرّف على خدماتنا</span>
+          <span class="lang-en">Explore Services</span>
+        </a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="card routes">
-      <h2>المسارات</h2>
-      <ul>
-        <li>الرياض ↔ جدة</li>
-        <li>الرياض ↔ الدمام</li>
-        <li>الرياض ↔ خميس مشيط</li>
-        <li>الرياض ↔ الأحساء</li>
-      </ul>
-    </section>
+  <!-- الخدمات -->
+  <section class="wrap" id="services">
+    <div class="grid services">
+      <div class="card" style="animation-delay:.02s">
+        <h3 class="lang-ar">شركة الشحن</h3>
+        <h3 class="lang-en">Carrier Partner</h3>
+        <p class="lang-ar">تنسيق شامل مع شركاء موثوقين بين المدن بأسعار تنافسية وسرعة تنفيذ.</p>
+        <p class="lang-en">End-to-end coordination with trusted intercity carriers at competitive rates and quick turnaround.</p>
+      </div>
+      <div class="card" style="animation-delay:.05s">
+        <h3 class="lang-ar">السائق الخاص</h3>
+        <h3 class="lang-en">Private Driver</h3>
+        <p class="lang-ar">نقل مباشر ومرن لطلباتك الخاصة مع تتبّع وتواصل سريع.</p>
+        <p class="lang-en">Direct and flexible transport for bespoke needs with fast communication.</p>
+      </div>
+      <div class="card" style="animation-delay:.08s">
+        <h3 class="lang-ar">مندوب داخل المدينة</h3>
+        <h3 class="lang-en">In-City Agent</h3>
+        <p class="lang-ar">استلام من موقعك (First-mile) أو تسليم إلى عميل الوجهة (Last-mile) بموثوقية.</p>
+        <p class="lang-en">Reliable first-mile pickup from your location or last-mile delivery to recipients.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="services">
-      <div class="card">
-        <h3>شركة الشحن</h3>
-        <p>تنسيق شحنتك مع شركاء موثوقين بين المدن.</p>
+  <!-- المسارات -->
+  <section class="wrap" id="routes">
+    <div class="card">
+      <h3 class="lang-ar">المسارات النشطة</h3>
+      <h3 class="lang-en">Active Routes</h3>
+      <div class="grid routes">
+        <div>
+          <ul class="lang-ar">
+            <li>الرياض ↔ جدة</li>
+            <li>الرياض ↔ الدمام</li>
+            <li>الرياض ↔ خميس مشيط</li>
+            <li>الرياض ↔ الأحساء</li>
+          </ul>
+          <ul class="lang-en">
+            <li>Riyadh ↔ Jeddah</li>
+            <li>Riyadh ↔ Dammam</li>
+            <li>Riyadh ↔ Khamis Mushait</li>
+            <li>Riyadh ↔ Al-Ahsa</li>
+          </ul>
+        </div>
+        <div>
+          <p class="muted lang-ar">* نستقبل طلبات مسارات إضافية حسب الطلب والكمية.</p>
+          <p class="muted lang-en">* Additional routes available on demand and volume.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>السائق الخاص</h3>
-        <p>نقل مباشر ومرن حسب احتياجك.</p>
-      </div>
-      <div class="card">
-        <h3>مندوب داخل المدينة</h3>
-        <p>استلام من موقعك إلى المستودع/شركة الشحن (First-mile) أو تسليم من المستودع إلى عميل الوجهة (Last-mile).</p>
-        <a class="btn" href="#quote">طلب خدمة المندوب</a>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="quote" class="card">
-      <h2>طلب عرض سعر</h2>
+  <!-- عرض سعر -->
+  <section class="wrap" id="quote">
+    <div class="card">
+      <h3 class="lang-ar">طلب عرض سعر</h3>
+      <h3 class="lang-en">Request a Quote</h3>
       <form action="https://formspree.io/f/mjkaaazd" method="POST" accept-charset="UTF-8">
-        <input type="hidden" name="_subject" value="Quote Request (AR)">
+        <input type="hidden" name="_subject" value="Quote Request (Bilingual)">
         <input type="hidden" name="_redirect" value="/thanks.html">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="row">
           <div>
-            <label>الاسم الكامل</label>
-            <input type="text" name="full_name" placeholder="الاسم الكامل" required>
+            <label class="lang-ar">الاسم الكامل</label>
+            <label class="lang-en">Full Name</label>
+            <input type="text" name="full_name" required placeholder="محمد أحمد / John Doe">
           </div>
           <div>
-            <label>رقم الجوال</label>
-            <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
+            <label class="lang-ar">رقم الجوال</label>
+            <label class="lang-en">Mobile</label>
+            <input type="tel" name="phone" required placeholder="9665xxxxxxxx">
           </div>
         </div>
 
         <div class="row">
           <div>
-            <label>نوع الخدمة</label>
+            <label class="lang-ar">نوع الخدمة</label>
+            <label class="lang-en">Service Type</label>
             <select name="service_type" required>
-              <option value="">اختر</option>
-              <option>شركة الشحن</option>
-              <option>سائق خاص</option>
-              <option>مندوب داخل المدينة</option>
+              <option value=""></option>
+              <option class="lang-ar">شركة الشحن</option>
+              <option class="lang-ar">سائق خاص</option>
+              <option class="lang-ar">مندوب داخل المدينة</option>
+
+              <option class="lang-en">Carrier Partner</option>
+              <option class="lang-en">Private Driver</option>
+              <option class="lang-en">In-City Agent</option>
             </select>
           </div>
           <div>
-            <label>من مدينة</label>
+            <label class="lang-ar">من مدينة</label>
+            <label class="lang-en">From City</label>
             <select name="from_city" required>
-              <option value="">اختر</option>
-              <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
+              <option value=""></option>
+              <option class="lang-ar">الرياض</option><option class="lang-ar">جدة</option><option class="lang-ar">الدمام</option><option class="lang-ar">الأحساء</option><option class="lang-ar">خميس مشيط</option>
+
+              <option class="lang-en">Riyadh</option><option class="lang-en">Jeddah</option><option class="lang-en">Dammam</option><option class="lang-en">Al-Ahsa</option><option class="lang-en">Khamis Mushait</option>
             </select>
           </div>
           <div>
-            <label>إلى مدينة</label>
+            <label class="lang-ar">إلى مدينة</label>
+            <label class="lang-en">To City</label>
             <select name="to_city" required>
-              <option value="">اختر</option>
-              <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
+              <option value=""></option>
+              <option class="lang-ar">الرياض</option><option class="lang-ar">جدة</option><option class="lang-ar">الدمام</option><option class="lang-ar">الأحساء</option><option class="lang-ar">خميس مشيط</option>
+
+              <option class="lang-en">Riyadh</option><option class="lang-en">Jeddah</option><option class="lang-en">Dammam</option><option class="lang-en">Al-Ahsa</option><option class="lang-en">Khamis Mushait</option>
             </select>
           </div>
         </div>
 
         <div>
-          <label>طريقة التسليم</label>
-          <div>
-            <label><input type="radio" name="pickup_option" value="from_warehouse" checked> تسليم للمستودع</label>
-            <label><input type="radio" name="pickup_option" value="pickup_from_location"> مندوب داخل المدينة</label>
-          </div>
-          <input type="hidden" name="tag" id="pickupTag" value="">
+          <label class="lang-ar">وصف الشحنة</label>
+          <label class="lang-en">Shipment Description</label>
+          <textarea name="shipment_desc" rows="3" required placeholder="الوزن التقريبي، الأبعاد، تفاصيل مهمة / Approx. weight, dimensions, details"></textarea>
         </div>
 
-        <div id="cityAgentModeWrap" style="display:none; margin-top:8px">
-          <label>خدمة المندوب داخل المدينة</label>
-          <div>
-            <label><input type="radio" name="city_agent_mode" value="first_mile" checked> من موقعي → المستودع/شركة الشحن</label>
-            <label><input type="radio" name="city_agent_mode" value="last_mile"> من المستودع/شركة الشحن → عميل الوجهة</label>
-          </div>
-        </div>
-
-        <div id="firstMileFields" style="display:none; margin-top:8px">
-          <div class="row">
-            <div>
-              <label>مدينة الاستلام</label>
-              <select name="pickup_city_first">
-                <option value="">اختر</option>
-                <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
-              </select>
-            </div>
-            <div>
-              <label>العنوان التفصيلي للاستلام</label>
-              <input type="text" name="pickup_address_first" placeholder="الحي، الشارع، رقم المبنى">
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label>التاريخ المفضل</label>
-              <input type="date" name="pickup_date_first">
-            </div>
-            <div>
-              <label>الوقت المفضل</label>
-              <input type="time" name="pickup_time_first">
-            </div>
-          </div>
-          <div>
-            <label>تعليمات خاصة (اختياري)</label>
-            <textarea name="pickup_notes_first" placeholder="مثال: تواصل قبل الوصول"></textarea>
-          </div>
-          <small class="hint">خدمة الاستلام متاحة في: الرياض، جدة، الدمام، الأحساء، خميس مشيط. 10:00–20:00.</small>
-        </div>
-
-        <div id="lastMileFields" style="display:none; margin-top:8px">
-          <div class="row">
-            <div>
-              <label>مدينة التسليم</label>
-              <select name="delivery_city_last">
-                <option value="">اختر</option>
-                <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
-              </select>
-            </div>
-            <div>
-              <label>العنوان التفصيلي للتسليم</label>
-              <input type="text" name="delivery_address_last" placeholder="الحي، الشارع، رقم المبنى">
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label>اسم المستلم</label>
-              <input type="text" name="delivery_contact_name" placeholder="اسم المستلم">
-            </div>
-            <div>
-              <label>جوال المستلم</label>
-              <input type="tel" name="delivery_contact_phone" placeholder="9665xxxxxxxx">
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label>التاريخ المفضل</label>
-              <input type="date" name="delivery_date_last">
-            </div>
-            <div>
-              <label>الوقت المفضل</label>
-              <input type="time" name="delivery_time_last">
-            </div>
-          </div>
-          <div>
-            <label>تعليمات خاصة (اختياري)</label>
-            <textarea name="delivery_notes_last" placeholder="مثال: تواصل قبل الوصول"></textarea>
-          </div>
-          <small class="hint">خدمة التسليم متاحة في: الرياض، جدة، الدمام، الأحساء، خميس مشيط. 10:00–20:00.</small>
-        </div>
-
-        <div>
-          <label>وصف الشحنة</label>
-          <textarea name="shipment_desc" placeholder="الوزن التقريبي، الأبعاد، أي تفاصيل مهمة" rows="3" required></textarea>
-        </div>
-
-        <button class="btn" type="submit">إرسال الطلب</button>
+        <button class="btn lang-ar" type="submit">إرسال الطلب</button>
+        <button class="btn lang-en" type="submit">Submit</button>
       </form>
-    </section>
+    </div>
+  </section>
 
-    <section id="join" class="card">
-      <h2>انضم كشريك نقل</h2>
-      <p class="muted">سائق/مورّد بين المدن أو مندوب داخل المدينة.</p>
+  <!-- الانضمام كشريك -->
+  <section class="wrap" id="join">
+    <div class="card">
+      <h3 class="lang-ar">انضم كشريك نقل</h3>
+      <h3 class="lang-en">Partner with ROVA</h3>
+      <p class="muted lang-ar">سائق/مورّد بين المدن أو مندوب داخل المدينة</p>
+      <p class="muted lang-en">Intercity driver/supplier or in-city agent</p>
       <form action="https://formspree.io/f/mzzjjjqd" method="POST" accept-charset="UTF-8">
-        <input type="hidden" name="_subject" value="Partner Application (AR)">
+        <input type="hidden" name="_subject" value="Partner Application (Bilingual)">
         <input type="hidden" name="_redirect" value="/thanks.html">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="row">
           <div>
-            <label>نوع الانضمام</label>
+            <label class="lang-ar">نوع الانضمام</label>
+            <label class="lang-en">Role</label>
             <select id="roleSelect" required>
-              <option value="carrier_driver" selected>سائق/مورّد بين المدن</option>
-              <option value="city_agent">مندوب داخل المدينة</option>
+              <option value="carrier_driver" selected class="lang-ar">سائق/مورّد بين المدن</option>
+              <option value="city_agent" class="lang-ar">مندوب داخل المدينة</option>
+
+              <option value="carrier_driver" class="lang-en">Intercity Driver/Supplier</option>
+              <option value="city_agent" class="lang-en">In-City Agent</option>
             </select>
             <input type="hidden" name="role" id="roleHidden" value="carrier_driver">
           </div>
           <div>
-            <label>الاسم الكامل</label>
-            <input type="text" name="full_name" placeholder="الاسم الكامل" required>
+            <label class="lang-ar">الاسم الكامل</label>
+            <label class="lang-en">Full Name</label>
+            <input type="text" name="full_name" required placeholder="الاسم / Name">
           </div>
         </div>
 
         <div class="row">
           <div>
-            <label>المدينة</label>
+            <label class="lang-ar">المدينة</label>
+            <label class="lang-en">City</label>
             <select name="city" required>
-              <option value="">اختر</option>
-              <option>الرياض</option><option>جدة</option><option>الدمام</option><option>الأحساء</option><option>خميس مشيط</option>
+              <option value=""></option>
+              <option class="lang-ar">الرياض</option><option class="lang-ar">جدة</option><option class="lang-ar">الدمام</option><option class="lang-ar">الأحساء</option><option class="lang-ar">خميس مشيط</option>
+
+              <option class="lang-en">Riyadh</option><option class="lang-en">Jeddah</option><option class="lang-en">Dammam</option><option class="lang-en">Al-Ahsa</option><option class="lang-en">Khamis Mushait</option>
             </select>
           </div>
           <div>
-            <label>نوع المركبة</label>
+            <label class="lang-ar">نوع المركبة</label>
+            <label class="lang-en">Vehicle</label>
             <select name="vehicle" required>
-              <option value="">اختر</option>
-              <option>دراجة</option><option>سيدان</option><option>فان</option><option>شاحنة صغيرة</option><option>شاحنة</option>
+              <option value=""></option>
+              <option class="lang-ar">دراجة</option><option class="lang-ar">سيدان</option><option class="lang-ar">فان</option><option class="lang-ar">شاحنة صغيرة</option><option class="lang-ar">شاحنة</option>
+
+              <option class="lang-en">Bike</option><option class="lang-en">Sedan</option><option class="lang-en">Van</option><option class="lang-en">Pickup</option><option class="lang-en">Truck</option>
             </select>
           </div>
         </div>
 
         <div class="row">
           <div>
-            <label>التوفّر</label>
-            <input type="text" name="availability" placeholder="مثال: 10ص–8م" required>
+            <label class="lang-ar">التوفّر</label>
+            <label class="lang-en">Availability</label>
+            <input type="text" name="availability" required placeholder="10ص–8م / 10AM–8PM">
           </div>
           <div>
-            <label>الجوال/واتساب</label>
-            <input type="tel" name="phone" placeholder="9665xxxxxxxx" required>
+            <label class="lang-ar">الجوال/واتساب</label>
+            <label class="lang-en">Mobile/WhatsApp</label>
+            <input type="tel" name="phone" required placeholder="9665xxxxxxxx">
           </div>
         </div>
 
         <div>
-          <label>خبرة سابقة (اختياري)</label>
-          <textarea name="experience" placeholder="الشركات/السنوات/المناطق"></textarea>
+          <label class="lang-ar">خبرة سابقة (اختياري)</label>
+          <label class="lang-en">Previous Experience (optional)</label>
+          <textarea name="experience" placeholder="الشركات/السنوات/المناطق — companies/years/areas"></textarea>
         </div>
 
-        <button class="btn" type="submit">إرسال</button>
+        <button class="btn lang-ar" type="submit">إرسال</button>
+        <button class="btn lang-en" type="submit">Submit</button>
       </form>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="card">
-    <p>© ROVA روڤا</p>
-    <p><a data-wa target="_blank" rel="noopener">تواصل واتساب</a></p>
+  <!-- سياسة الخصوصية -->
+  <section class="wrap" id="privacy">
+    <div class="card">
+      <h3 class="lang-ar">سياسة الخصوصية</h3>
+      <h3 class="lang-en">Privacy Policy</h3>
+
+      <div class="lang-ar">
+        <p><strong>آخر تحديث:</strong> 2025/01/01 — نلتزم بحماية بياناتك وفق <strong>نظام حماية البيانات الشخصية (PDPL)</strong> ولوائحه التنفيذية بإشراف <strong>سدايا</strong>.</p>
+        <p><strong>البيانات التي نجمعها:</strong> الاسم، الجوال، المدن (من/إلى)، تفاصيل الشحنة، تفضيلات الخدمة، وأي مرفقات لازمة للطلب.</p>
+        <p><strong>أغراض المعالجة والأساس النظامي:</strong> تنفيذ الخدمة والوفاء بالعقد، التواصل بشأن الطلب، الامتثال للالتزامات النظامية، وتحسين الجودة (مصلحة مشروعة).</p>
+        <p><strong>مشاركة البيانات:</strong> مع مزودي الخدمة وشركاء النقل والسائقين بالقدر اللازم لتنفيذ الخدمة، مع التزامهم بالسرية وحماية البيانات.</p>
+        <p><strong>النقل الدولي:</strong> إن لزم نقل البيانات خارج المملكة، فذلك وفق أحكام PDPL والضمانات المعتمدة.</p>
+        <p><strong>الاحتفاظ والحذف:</strong> نحتفظ بالبيانات لمدة الحاجة لتنفيذ الخدمة والامتثال للأنظمة، ثم تُحذف أو تُجهّل الهوية بأمان.</p>
+        <p><strong>حقوقك:</strong> الوصول، التصحيح، التحديث، طلب الحذف، وسحب الموافقة حيثما كان الأساس هو الموافقة، وحق التظلم لدى سدايا.</p>
+        <p><strong>الأمن:</strong> نطبق تدابير تقنية وتنظيمية مناسبة للوقاية من الوصول غير المصرح به أو الفقد أو الإفشاء.</p>
+        <p><strong>التواصل:</strong> للاستفسارات أو حقوق البيانات: <a href="mailto:privacy@rova.sa">privacy@rova.sa</a> — أو واتساب خدمة العملاء.</p>
+        <p style="font-size:.9rem;color:#9FB0C8">*هذه السياسة لأغراض عامة وقد تحتاج مواءمة قانونية بحسب نموذج عملك، يُنصح بمراجعتها من قبل مستشار قانوني.</p>
+      </div>
+
+      <div class="lang-en">
+        <p><strong>Last Updated:</strong> 2025-01-01 — We protect your data under the Saudi <strong>PDPL</strong> and its regulations supervised by <strong>SDAIA</strong>.</p>
+        <p><strong>Data We Collect:</strong> Name, mobile number, cities (from/to), shipment details, service preferences, and any attachments needed to process your request.</p>
+        <p><strong>Purposes & Legal Basis:</strong> Service execution and contract performance, customer communications, legal compliance, and quality improvement (legitimate interest).</p>
+        <p><strong>Sharing:</strong> With service providers, carrier partners, and drivers strictly as needed to deliver the service, under confidentiality and data-protection commitments.</p>
+        <p><strong>International Transfers:</strong> If required, transfers follow PDPL safeguards and approved mechanisms.</p>
+        <p><strong>Retention & Deletion:</strong> We retain data as needed to fulfill services and legal duties, then delete or anonymize securely.</p>
+        <p><strong>Your Rights:</strong> Access, rectification, update, deletion, withdraw consent (where applicable), and lodge complaints with SDAIA.</p>
+        <p><strong>Security:</strong> We apply appropriate technical and organizational measures to mitigate unauthorized access, loss, or disclosure.</p>
+        <p><strong>Contact:</strong> For privacy inquiries or rights requests: <a href="mailto:privacy@rova.sa">privacy@rova.sa</a>.</p>
+        <p style="font-size:.9rem;color:#9FB0C8">*This template is for general information and should be reviewed by legal counsel to fit your operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- الشروط والأحكام -->
+  <section class="wrap" id="terms">
+    <div class="card">
+      <h3 class="lang-ar">الشروط والأحكام</h3>
+      <h3 class="lang-en">Terms & Conditions</h3>
+
+      <div class="lang-ar">
+        <p><strong>التعريف بالخدمة:</strong> ROVA منصة لخدمات النقل بين المدن (شركة شحن/سائق خاص/مندوب داخل المدينة) وفق الطلب.</p>
+        <p><strong>الطلبات والدفع:</strong> بإرسال الطلب، تقرّ بصحة البيانات والالتزام بالتكاليف المعروضة. قد تُطلب دفعة مقدّمة لبعض الخدمات.</p>
+        <p><strong>المسموحات والمحظورات:</strong> يمنع شحن المواد الخطرة/المخالفة للأنظمة/المحظورة نظاماً. قد نطلب مستندات إضافية للتأكد.</p>
+        <p><strong>المواعيد والتسليم:</strong> نبذل العناية المعقولة للالتزام بالمواعيد. قد تتأثر بظروف خارجة عن الإرادتين (قوة قاهرة/ظروف طارئة).</p>
+        <p><strong>المسؤولية:</strong> حدود مسؤوليتنا لا تتجاوز قيمة الشحنة أو قيمة الأجر المدفوع للخدمة محل المطالبة — أيهما أقل — ما لم ينص النظام على غير ذلك.</p>
+        <p><strong>الدعم والشكاوى:</strong> يمكنك التواصل عبر واتساب أو البريد. سيتم التعامل مع الشكاوى خلال مدة معقولة.</p>
+        <p><strong>الخصوصية:</strong> يخضع استخدام بياناتك لسياسة الخصوصية أعلاه وفق PDPL.</p>
+        <p><strong>القانون والاختصاص:</strong> تخضع هذه الشروط لأنظمة المملكة العربية السعودية، ويكون الاختصاص للمحاكم المختصة داخلها.</p>
+      </div>
+
+      <div class="lang-en">
+        <p><strong>Service:</strong> ROVA provides on-demand intercity logistics (carrier/driver/in-city agent).</p>
+        <p><strong>Orders & Payment:</strong> By submitting a request, you confirm accurate information and agree to applicable fees. Deposits may be required.</p>
+        <p><strong>Allowed/Prohibited Items:</strong> No hazardous, illegal, or regulated items in violation of Saudi laws. We may request supporting documents.</p>
+        <p><strong>Timing & Delivery:</strong> We use reasonable efforts to meet timelines; delays may occur due to force majeure or external circumstances.</p>
+        <p><strong>Liability:</strong> Our liability is limited to the shipment value or the service fee paid for the claim subject — whichever is lower — unless otherwise required by law.</p>
+        <p><strong>Support & Complaints:</strong> Contact us via WhatsApp or email; complaints are handled within a reasonable timeframe.</p>
+        <p><strong>Privacy:</strong> Your data is processed per the PDPL; see our Privacy Policy above.</p>
+        <p><strong>Governing Law & Jurisdiction:</strong> These terms are governed by the laws of the Kingdom of Saudi Arabia; competent Saudi courts have jurisdiction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر مع الشعار مصغّر -->
+  <footer>
+    <div class="foot-logos">
+      <!-- داكن -->
+      <svg class="logo logo--gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" aria-label="ROVA روڤا — شعار مصغّر">
+        <defs><linearGradient id="gGold2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6E7C7"/><stop offset="0.55" stop-color="#E6C988"/><stop offset="1" stop-color="#D4B36E"/></linearGradient></defs>
+        <path d="M14 54 L14 16 L42 16 C56 16 66 24 66 36 C66 46 59 52 44 53 L66 54 L58 62 L33 54 Z" fill="url(#gGold2)"/>
+        <text x="84" y="44" font-size="22" font-family="Poppins, system-ui" font-weight="800" fill="url(#gGold2)">ROVA</text>
+        <text x="84" y="61" font-size="13" font-family="Cairo, system-ui" font-weight="700" fill="#E6C988">روڤا</text>
+      </svg>
+      <!-- فاتح -->
+      <svg class="logo logo--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" aria-label="ROVA روڤا — شعار مصغّر فاتح">
+        <path d="M14 54 L14 16 L42 16 C56 16 66 24 66 36 C66 46 59 52 44 53 L66 54 L58 62 L33 54 Z" fill="#1E1E24"/>
+        <text x="84" y="44" font-size="22" font-family="Poppins, system-ui" font-weight="900" fill="#111522">ROVA</text>
+        <text x="84" y="61" font-size="13" font-family="Cairo, system-ui" font-weight="700" fill="#6C5930">روڤا</text>
+      </svg>
+    </div>
+    <p class="lang-ar">© ROVA | روڤا — جميع الحقوق محفوظة</p>
+    <p class="lang-en">© ROVA — All rights reserved</p>
+    <p>
+      <a class="lang-ar" data-wa target="_blank" rel="noopener">تواصل عبر واتساب</a>
+      <a class="lang-en" data-wa target="_blank" rel="noopener">Chat via WhatsApp</a>
+    </p>
   </footer>
 
   <script>
+    // واتساب
     const WHATSAPP_NUM = '966590000819';
     document.querySelectorAll('a[data-wa]').forEach(a => a.href = `https://wa.me/${WHATSAPP_NUM}`);
 
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 20) { nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'; }
-      else { nav.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)'; }
+    // لغة: تخزين وتبديل
+    const htmlEl = document.documentElement;
+    const langBtn = document.getElementById('langToggle');
+    const savedLang = localStorage.getItem('rova_lang') || 'ar';
+    setLang(savedLang);
+
+    langBtn.addEventListener('click', () => {
+      const next = htmlEl.getAttribute('data-lang') === 'en' ? 'ar' : 'en';
+      setLang(next);
     });
 
-    const pickupRadios = document.querySelectorAll('input[name="pickup_option"]');
-    const cityAgentWrap = document.getElementById('cityAgentModeWrap');
-    const firstMile = document.getElementById('firstMileFields');
-    const lastMile = document.getElementById('lastMileFields');
-    const tagInput = document.getElementById('pickupTag');
-
-    function setRequiredByNames(names, req) {
-      names.forEach(n => {
-        const el = document.querySelector(`[name="${n}"]`);
-        if (el) el.required = !!req;
-      });
+    function setLang(l){
+      htmlEl.setAttribute('data-lang', l === 'en' ? 'en' : 'ar');
+      if(l === 'en'){
+        htmlEl.setAttribute('lang', 'en'); htmlEl.setAttribute('dir','ltr');
+        langBtn.textContent = 'EN';
+      }else{
+        htmlEl.setAttribute('lang', 'ar'); htmlEl.setAttribute('dir','rtl');
+        langBtn.textContent = 'AR';
+      }
+      localStorage.setItem('rova_lang', l);
     }
 
-    function toggleAll() {
-      const selectedPickup = document.querySelector('input[name="pickup_option"]:checked');
-      const pickupVal = selectedPickup ? selectedPickup.value : 'from_warehouse';
-      const isCityAgent = pickupVal === 'pickup_from_location';
-
-      cityAgentWrap.style.display = isCityAgent ? 'block' : 'none';
-
-      if (!isCityAgent) {
-        if (firstMile) firstMile.style.display = 'none';
-        if (lastMile) lastMile.style.display = 'none';
-        if (tagInput) tagInput.value = '';
-        setRequiredByNames([
-          'pickup_city_first','pickup_address_first',
-          'delivery_city_last','delivery_address_last','delivery_contact_name','delivery_contact_phone'
-        ], false);
-        return;
-      }
-
-      const modeRadio = document.querySelector('input[name="city_agent_mode"]:checked');
-      const mode = modeRadio ? modeRadio.value : 'first_mile';
-
-      if (mode === 'first_mile') {
-        if (firstMile) firstMile.style.display = 'block';
-        if (lastMile) lastMile.style.display = 'none';
-        if (tagInput) tagInput.value = 'CITY_PICKUP_FIRST_MILE';
-        setRequiredByNames(['pickup_city_first','pickup_address_first'], true);
-        setRequiredByNames(['delivery_city_last','delivery_address_last','delivery_contact_name','delivery_contact_phone'], false);
-      } else {
-        if (firstMile) firstMile.style.display = 'none';
-        if (lastMile) lastMile.style.display = 'block';
-        if (tagInput) tagInput.value = 'CITY_DELIVERY_LAST_MILE';
-        setRequiredByNames(['delivery_city_last','delivery_address_last','delivery_contact_name','delivery_contact_phone'], true);
-        setRequiredByNames(['pickup_city_first','pickup_address_first'], false);
-      }
-    }
-
-    pickupRadios.forEach(r => r.addEventListener('change', toggleAll));
-    document.addEventListener('change', (e) => {
-      if (e.target && e.target.name === 'city_agent_mode') toggleAll();
-    });
-    toggleAll();
-
+    // مزامنة دور الشريك
     const roleSelect = document.getElementById('roleSelect');
     const roleHidden = document.getElementById('roleHidden');
     if (roleSelect && roleHidden) {
       roleHidden.value = roleSelect.value;
-      roleSelect.addEventListener('change', () => roleHidden.value = roleSelect.value);
+      roleSelect.addEventListener('change', () => (roleHidden.value = roleSelect.value));
     }
+
+    // الثيم وفق تفضيل النظام + تبديل يدوي
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (prefersLight) document.body.classList.add('light');
+
+    const toggleBtn = document.getElementById('themeToggle');
+    function updateIcon(){ toggleBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️'; }
+    updateIcon();
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      updateIcon();
+    });
   </script>
 </body>
 </html>
+
